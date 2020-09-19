@@ -1,5 +1,5 @@
 import React from 'react';
-import auth0 from '../../lib/auth0'
+import auth0 from '../lib/auth0'
 import {Layout, Home as HomeContainer} from "../containers";
 
 function Home(){
