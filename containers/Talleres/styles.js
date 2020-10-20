@@ -6,21 +6,20 @@ export const Container = styled.div`
     width: 100%;
 `;
 
-export const Padres = styled.div`
+export const Talleres = styled.div`
     margin-top: 2%;
     
 `;
 
-export const PadresFondo = styled.div`
-  background-image: url("../img/home/padres.jpg");
+export const TalleresFondo = styled.div`
+  background-image: url("../img/talleres/portada.jpg");
   background-size: cover;
-  background-attachment: fixed;
-  height: 600px;
+  height: 900px;
   width: 100%;
 `;
 
 
-export const TextosPadres = styled.div`
+export const TextosTalleres = styled.div`
     display: flex;
     flex-direction: column;
   
@@ -29,13 +28,13 @@ export const TextosPadres = styled.div`
       top: 140px;
       left: 0px;
       left: 235px;
-      width: 35%;
+      font-size: 68px;
+      width: 15%;
       color: #fff;
       background-color:  ${leerColor(colores.celeste)};
  
-      font-size: 60px;
+      font-size: 70px;
       text-align: initial;
-      font-family: 'Racing Sans One', cursive;
       letter-spacing: 3px;
     }
 
@@ -53,20 +52,25 @@ export const TextosPadres = styled.div`
 `;
 
 
-export const DescuentoSemana = styled.div`
+export const TallerHoy = styled.div`
     width: 100%;  
     margin-top: 5%;
+    text-align:center;
+`;
+
+export const TallerHoyTextos = styled.div`
+    text-align: left;
+    margin-bottom: 3%;
 
     h1{
-      margin-bottom: 5%;
-      width: 40%;
-      color: ${leerColor(colores.gris)};
-      background-color: ${leerColor(colores.rosa)};
-      font-size: 38px;
-      font-family: 'Racing Sans One', cursive;
-      letter-spacing: 3px;
+      color: ${leerColor(colores.celeste)};
+      font-weight: black;
     }
-    
+
+    h3{
+      font-size: 18px;
+      color: ${leerColor(colores.gris)};
+    }
 `;
 
 export const Card = styled.a`
@@ -108,29 +112,6 @@ export const TitulosCard = styled.div`
 
 `;
 
-export const ContenedorImagenes = styled.div`
-  width: 100%;
-
- img{
-    width: 90%;
-    height: 570px;
-    object-fit: cover;
-    transition: transform .3s;
-    
- }
-
- img:hover{
-  transform: scale(1.5);
- }
-`;
-
-
-export const SalimosManejando = styled.div`
-    margin-top: 5%;
-    width: 100%;
-    display: flex;
-    flex-wrap:wrap;
-`;
 
 export const TextosSecciones = styled.div`
     display: flex;
@@ -140,7 +121,6 @@ export const TextosSecciones = styled.div`
     h1{    
       color: ${leerColor(colores.celeste)};
       font-size: 40px;
-      font-family: 'Racing Sans One', cursive;
       letter-spacing: 3px;
     }
 
@@ -162,7 +142,7 @@ export const ImagenesSalimosManejando = styled.div`
 `;
 
 
-export const ActividadesPadres = styled.div`
+export const ActividadesTalleres = styled.div`
     margin-top: 10%;
     margin-bottom: 10%;
     width: 100%;

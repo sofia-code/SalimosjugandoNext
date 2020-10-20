@@ -20,20 +20,9 @@ export default class BuscarEscuelaContainer extends Component {
     
     return (
     <>
-     <Wrapper direction="column">
-        <Header />
-        </Wrapper>
-
-        <Wrapper direction="row">
+        <Wrapper direction="column">
       <Buscador>
         <Form>
-            <select name="Categoría" id="Categoría">
-                <option name="Categoria">Categoria</option>
-                <option value="2004">2004</option>
-                <option value="2005">2005</option>
-                <option value="2006">2006</option>
-                <option value="2007">2007</option>
-            </select>
 
             <select name="Barrio" id="Barrio">
                 <option name="Barrio">Barrio</option>
@@ -45,12 +34,6 @@ export default class BuscarEscuelaContainer extends Component {
                 <option value="Villa Crespo">Villa Crespo</option>
             </select>
 
-            <select name="Género" id="Género">
-                <option name="Género">Género</option>
-                <option value="Femenino">Femenino</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Mixto">Mixto</option>
-            </select>
 
             <input type="submit" value="Buscar" />
         </Form>

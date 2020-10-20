@@ -2,40 +2,33 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import auth0 from '../../lib/auth0'
 /*import Slider from 'react-slick';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';*/
 
 import { Header, Footer, Wrapper, Boton } from '../../components';
 import { 
-    ContainerTexts, 
-    EncontraEscuela, 
     DescuentoSemana, 
+    Descuentos,
     Card,
     CardImg,
     TitulosCard,
-    Testimonios,
-    Torneitos,
-    ContenedorImagenes,
-    GrillaImagenes,
     SalimosManejando,
     ImagenesSalimosManejando,
     TextosSecciones,
     TextosPadres,
     Padres,
     PadresFondo,
-    PadresContenedor,
     LasActividades,
     ActividadesPadres,
     CardImgActividades,
 } from './styles';
 
 
-export default class HomeContainer extends Component {
+export default class ComunidadPadresContainer extends Component {
     render(){
    
   
-    const settings2 = {
+    const settings = {
         dots: true,
         infinite: true,
         speed: 500,
@@ -43,15 +36,8 @@ export default class HomeContainer extends Component {
         slidesToScroll: 3
       };
 
-    
-
-  
     return (
     <>
-     <Wrapper direction="column">
-        <Header />
-      </Wrapper>
-
              <PadresFondo>
                     <Padres>
                         <TextosPadres>
@@ -64,7 +50,8 @@ export default class HomeContainer extends Component {
             <Wrapper direction="column">
                 <DescuentoSemana>
                 <h1>Descuentos de esta semana</h1>
-                    <Slider {...settings2}>            
+                <Descuentos>
+                    {/* <Slider {...settings}>             */}
                        <Card>
                             <CardImg>
                                 <img src= '/img/padres/descuentos1.jpg' />
@@ -89,7 +76,8 @@ export default class HomeContainer extends Component {
                                 <h2>-30% en pelota de fútbol Adidas</h2>
                             </TitulosCard>
                         </Card>
-                        <Card>
+                        </Descuentos>
+                        {/* <Card>
                             <CardImg>
                                <img src= '/img/padres/descuentos4.jpg' />
                             </CardImg>
@@ -112,9 +100,9 @@ export default class HomeContainer extends Component {
                             <TitulosCard>
                                 <h2>-25% en bebidas "Levite"</h2>
                             </TitulosCard>
-                        </Card>
+                        </Card> */}
                         
-                    </Slider>
+                    {/* </Slider> */}
                 </DescuentoSemana>
             </Wrapper>
              
@@ -171,13 +159,10 @@ export default class HomeContainer extends Component {
                           
                         </LasActividades>
                   </ActividadesPadres>  
-                  
-
-
-         <Footer />
        
         </Wrapper>
-   
+     
+             
     </>
 
 );

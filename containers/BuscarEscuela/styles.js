@@ -4,30 +4,26 @@ import { breakpoints, leerColor, colores } from '../../constants';
 
 
 export const Buscador = styled.div`
-   width: 45%;
-   display:flex;
-   flex-wrap: wrap;
-   justify-content: right;
+   width: 100%;
 `;
 
-
 export const Form = styled.div`
+  
 select{
-  padding:8px;
-  width:50%;
-  font-weight: 800;
-  background-color: ${leerColor(colores.gris)};
-  margin-right: 2%;
-  margin-top: 2%;
+    padding: 7px;
+    width: 15%;
+    font-weight: 800;
+    background-color: hsl(0,0%,96.1%);
+    margin-right: 2%;
 }
   input{
-    background-color: ${leerColor(colores.celeste)};
-    padding:8px;
-    width:20%;
+    background-color: hsl(185.5,100%,42.5%);
+    padding: 10px;
+    width: 10%;
     font-weight: 800;
-    color:  ${leerColor(colores.gris)};
+    color: hsl(0,0%,96.1%);
     border: none;
-    margin-top: 2%;
+    margin-top: 5%;
   }
 `;
 
@@ -44,8 +40,9 @@ export const Card = styled.a`
   background-color:#060621;
   border-radius: 70px;
   flex-direction: row;
-  margin-bottom:5%;
-  width: 100%;
+  margin-bottom: 5%;
+  margin-right: 5%;
+  width: 45%;
   cursor: pointer;
   
 `;

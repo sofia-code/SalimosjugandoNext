@@ -29,13 +29,12 @@ export const TextosPadres = styled.div`
       top: 140px;
       left: 0px;
       left: 235px;
-      width: 35%;
+      width: 36%;
       color: #fff;
       background-color:  ${leerColor(colores.celeste)};
  
       font-size: 60px;
       text-align: initial;
-      font-family: 'Racing Sans One', cursive;
       letter-spacing: 3px;
     }
 
@@ -56,6 +55,7 @@ export const TextosPadres = styled.div`
 export const DescuentoSemana = styled.div`
     width: 100%;  
     margin-top: 5%;
+    
 
     h1{
       margin-bottom: 5%;
@@ -63,11 +63,15 @@ export const DescuentoSemana = styled.div`
       color: ${leerColor(colores.gris)};
       background-color: ${leerColor(colores.rosa)};
       font-size: 38px;
-      font-family: 'Racing Sans One', cursive;
       letter-spacing: 3px;
     }
     
 `;
+
+export const Descuentos = styled.div`
+      display: flex;
+`;
+
 
 export const Card = styled.a`
   display: flex!important;
@@ -140,7 +144,6 @@ export const TextosSecciones = styled.div`
     h1{    
       color: ${leerColor(colores.celeste)};
       font-size: 40px;
-      font-family: 'Racing Sans One', cursive;
       letter-spacing: 3px;
     }
 

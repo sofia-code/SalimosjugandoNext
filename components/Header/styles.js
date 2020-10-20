@@ -40,7 +40,7 @@ export const ContainerHeader = styled.div`
         text-decoration: none;
         font-weight: bold;
         color: #ccc;
-        font-size: 13px;
+        font-size: 14px;
         transition: all 2s ease;
         transition: transform .2s;
        }
@@ -71,16 +71,18 @@ export const Hamburguer = styled.div`
 
 export const Logo = styled.div`
 
+    position: relative;
+    z-index: 2;
 
 
 @media (min-width: ${breakpoints.mobileGrande}) {
 
   width: 100%;
   cursor: pointer;
-  margin-left: 2%;
-    margin-top: 4%;
+  margin-left:20%;
+  margin-top: 4%;
   img {
-    
+    width: 13%;
     transition: transform .2s;
   }
   

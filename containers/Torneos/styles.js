@@ -6,13 +6,13 @@ export const Container = styled.div`
     width: 100%;
 `;
 
-export const Padres = styled.div`
+export const Torneos = styled.div`
     margin-top: 2%;
     
 `;
 
-export const PadresFondo = styled.div`
-  background-image: url("../img/home/padres.jpg");
+export const TorneosFondo = styled.div`
+  background-image: url("../img/torneos/portada.jpg");
   background-size: cover;
   background-attachment: fixed;
   height: 600px;
@@ -20,7 +20,7 @@ export const PadresFondo = styled.div`
 `;
 
 
-export const TextosPadres = styled.div`
+export const TextosTorneos = styled.div`
     display: flex;
     flex-direction: column;
   
@@ -29,13 +29,12 @@ export const TextosPadres = styled.div`
       top: 140px;
       left: 0px;
       left: 235px;
-      width: 35%;
+      width: 15%;
       color: #fff;
       background-color:  ${leerColor(colores.celeste)};
  
       font-size: 60px;
       text-align: initial;
-      font-family: 'Racing Sans One', cursive;
       letter-spacing: 3px;
     }
 
@@ -53,175 +52,52 @@ export const TextosPadres = styled.div`
 `;
 
 
-export const DescuentoSemana = styled.div`
-    width: 100%;  
-    margin-top: 5%;
-
+export const TablaPosiciones = styled.div`
+    width: 100%;
     h1{
-      margin-bottom: 5%;
-      width: 40%;
-      color: ${leerColor(colores.gris)};
-      background-color: ${leerColor(colores.rosa)};
-      font-size: 38px;
-      font-family: 'Racing Sans One', cursive;
-      letter-spacing: 3px;
-    }
-    
-`;
-
-export const Card = styled.a`
-  display: flex!important;
-  border-radius: 70px;
-  flex-direction: column;
-  max-width: 95%;
-  cursor: pointer;
-  align-items: center;
-  margin: 0 auto;
-  
-`;
-
-export const CardImg = styled.div`
-    height: 250px;
-    width: 150px;
-    img{
-     width: 200%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 150px;
+    color:  ${leerColor(colores.gris)};
     }
 
+    table{
+      width: 100%;
+      tr:nth-child(even) {background-color: #060621;
+    }
+
+    thead th{
+      background-color: #060621;
+      font-size:20px;
+    }
+
+    th, td {
+      color:  ${leerColor(colores.gris)};
+      text-align: left;
+    }
+
+
+}
 `;
 
-export const TitulosCard = styled.div`
-  display: flex;
-  flex-direction: column;
+  export const HoyJuega = styled.div`
+  width: 60%;
+  margin-top:5%;
+  text-align:center;
+  background-color: #060621;
 
-  h2{
-    font-size: 24px;
-    color: ${leerColor(colores.gris)};
-    background-color: ${leerColor(colores.celeste)};
-    text-transform: uppercase;
-    font-weight: 800;
-    display:flex;
-    padding: 5px;
+  h1, h2, h3{
+    color:  ${leerColor(colores.gris)};
+  }
+
+  img{
+    margin-right: 30px;
+    margin-left: 30px;
+    width: 15%;
   }
 
 `;
 
-export const ContenedorImagenes = styled.div`
-  width: 100%;
-
- img{
-    width: 90%;
-    height: 570px;
-    object-fit: cover;
-    transition: transform .3s;
-    
- }
-
- img:hover{
-  transform: scale(1.5);
- }
-`;
-
-
-export const SalimosManejando = styled.div`
-    margin-top: 5%;
-    width: 100%;
-    display: flex;
-    flex-wrap:wrap;
-`;
-
-export const TextosSecciones = styled.div`
-    display: flex;
-    flex-direction: column;
-    width:100%;
- 
-    h1{    
-      color: ${leerColor(colores.celeste)};
-      font-size: 40px;
-      font-family: 'Racing Sans One', cursive;
-      letter-spacing: 3px;
-    }
-
-    h3{
-      color:  ${leerColor(colores.gris)};
-      margin-bottom: 2%;
-      width:55%;
-    }
+export const ProximasFechas = styled.div`
 
 `;
-
-export const ImagenesSalimosManejando = styled.div`
-    margin-top: 2%;
-    width:100%;
-    display:flex;
-    img{
-     width:50%;
-	}
-`;
-
-
-export const ActividadesPadres = styled.div`
-    margin-top: 10%;
-    margin-bottom: 10%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-`;
-
-export const LasActividades = styled.div`
-    margin-top: 5%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-column-gap: 20px;
-
-    img{
-        width: 250%!important;
-        height: 350px!important;
-        object-fit: cover;
-        border-radius: 250px!important;
-	}
-
-    h1{
-        font-size: 24px;
-        color: ${leerColor(colores.gris)};
-        background-color: ${leerColor(colores.rosa)};
-        text-transform: uppercase;
-        font-weight: 800;
-        display:flex;
-        padding: 5px;
-        width:50%;
-      
-
-	}
-
-    h2, h3{
-     color:  ${leerColor(colores.gris)};
-      margin-bottom: 2%;
-      width:80%;
-      font-size: 18px;
-	}
-
-`;
-
-
-
-export const CardImgActividades = styled.div`
-    height: 385px;
-    width: 150px;
-    img{
-     width: 200%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 150px;
-    }
-
-`;
-
-
-
 
 
 
