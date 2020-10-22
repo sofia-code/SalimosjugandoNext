@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import Link from 'next/link';
+import firebase from "firebase";
 /*import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';*/
 import { Header, Footer, Wrapper, Boton } from '../../components';
@@ -31,7 +32,34 @@ import {
 
 export default class HomeContainer extends Component {
     render(){
+        // (function(){
+            
+        //     const config = {
+        //         apiKey:process.env.FIREBASE_API_KEY,
+        //         authDomain:process.env.FIREBASE_AUTH_DOMAIN,
+        //         databaseURL:process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+        //         projectId:process.env.FIREBASE_PROJECT_ID,
+        //         storageBucket:process.env.FIREBASE_STORAGE_BUCKET,
+        //         messagingSenderId: process.env.FIREBASE_SENDER_ID,
+        //         appId:process.env.FIREBASE_SENDER_APPID
+        //       };
+        //       if (!firebase.apps.length) {
+        //         firebase.initializeApp(config);
+        //     }
+            
+        //     const preObject =  document.getElementById('MK54eVspiihkUP7n1Vo');
+        //     const dbRefObject = firebase.database().ref().child('escuelas');
+        //     const ulList = document.getElementById('list');
+        //     const dbRefList = dbRefObject.child('name');
 
+        //     dbRefObject.on('value', snap => {
+        //         preObject.innerText = JSON.stringify(snap.val(), null, 3);
+        //     });
+
+        //     dbRefList.on('child_added', snap => console.log(snap.val()))
+
+
+        // }());
     return (
     <>
      <Wrapper direction="column">

@@ -17,10 +17,8 @@ export default async (req, res) => {
       // const { user } = session;
       // const { name: username } = user;
       //Agrego document en la collection de questions (usando firebase con async/await)
-      const responseKey = await firebaseDB
-        .ref("escuelas")
-        .push({
-          name,
+      const responseKey = await firebaseDB.ref("escuelas").push({
+          name, //todos los que quieroen mi base
         })
         .getKey();
       //Devuelvo el usuario recien creado
