@@ -19,48 +19,90 @@ export const ContainerTexts = styled.div`
 `;
 
 export const ContenedorSlider = styled.div`
- 
- div{
-    width:100%;
- }
+      h1{
+        font-size: 30px;
+        left: 85px;
+        position: absolute;
+        top: 225px;
+        width: 70%;
+        color: #fff;
+      }
 
-  img{
-    width: 100%;
-    height: 820px;
-    object-fit:cover;
-  }
+      img{
+        width: 100%;
+        height:500px;
+        object-fit:cover;
+      }
 
-  h1{
-    position:absolute;
-      top: 300px;
-      left: 265px;
-      width: 60%;
-      color: #fff;
- 
-      font-size: 60px;
-      text-align: initial;
-      letter-spacing: 3px;
-  }
 
-  button{
-    position: absolute;
-    top: 570px;
-    left: 250px; 
-    background-color: transparent;
-    border: none;
+@media (min-width: ${breakpoints.tablet}) {
+        h1{
+          font-size: 40px;
+        }
+}
+
+
+
+@media (min-width: ${breakpoints.laptop}) {
+    div{
+        width:100%;
     }
+
+      img{
+        width: 100%;
+        height: 820px;
+        object-fit:cover;
+      }
+
+      h1{
+        position:absolute;
+        left: 220px;
+        top: 300px;
+        font-size: 60px;
+        text-align: center;
+        letter-spacing: 3px;
+      }
+}
+
+@media (min-width: ${breakpoints.laptopL}) {
+      h1{
+        left: 265px;
+        top: 340px;
+      }
+}
+`;
+
+export const ContenedorBoton = styled.div`
+        position: absolute;
+        top: 460px;
+        left: 110px;
+         
+        margin: 0 auto;
+        text-align:center;
+
+@media (min-width: ${breakpoints.laptop}) {
+        top: 640px;
+        left: 0px;
+
+}
 `;
 
 export const GrillaEscuelas = styled.div`
+    display: flex;
+    flex-direction: column;
+
+
+@media (min-width: ${breakpoints.laptop}) {
+   
     display:grid;
     grid-template-columns: 30% 30% 30%;
     grid-column-gap: 50px;
     grid-row-gap: 45px;
     width: 100%;  
     margin-top: 5%;
+}
 
 `;
-
 
 export const EscuelasRecomendadas = styled.div`
     
@@ -129,29 +171,6 @@ export const TitulosCard = styled.div`
     font-style: italic;
   } 
   
-
-`;
-
-
-
-  export const Torneitos = styled.div`
-    width: 100%;
-    margin-top: 8%;
-
-    
-    h1{
-      width: 50%;
-      color: ${leerColor(colores.gris)};
-      font-size: 30px;
-      letter-spacing: 3px;
-    }
-
-    @media (min-width: ${breakpoints.laptop}){
-      h1{
-      width: 30%;
-      font-size: 38px;
-    }
-  }
 `;
 
 export const HoyJuega = styled.div`
@@ -214,18 +233,14 @@ export const ContenedorImagenes = styled.div`
 
 
 export const SalimosManejando = styled.div`
-   
-   display:flex;
-   img{
-      display:none;
-    }
-
+       display:none;
+ 
 
    @media (min-width: ${breakpoints.laptop}){
     margin-top: 10%;
     width: 100%;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 60% 40%;
     
     img{
       display:block;
@@ -239,7 +254,7 @@ export const TextosSecciones = styled.div`
     display: flex;
     flex-direction: column;
     width:85%;
-    margin-top: 8%;
+    margin-top: 20%;
 
     h1{
       color:  ${leerColor(colores.gris)};
@@ -280,6 +295,7 @@ export const TextosPadres = styled.div`
       color:${leerColor(colores.gris)};
       letter-spacing: 3px;
       font-size: 60px;
+      text-align: center;
     }
 
     h3{
@@ -289,6 +305,8 @@ export const TextosPadres = styled.div`
       margin-bottom: 4%;
       top: 10px;
       font-size: 18px; 
+      text-align: center;
+
     }
 
     @media (min-width: ${breakpoints.tablet}){
@@ -297,27 +315,27 @@ export const TextosPadres = styled.div`
     }
 
     h3{
-      font-size: 18px;
+      font-size: 20px;
+      margin-top: 10%;
+
+    }
+  }
+
+  @media (min-width: ${breakpoints.laptopL}){
+
+    h3{
+      margin-top: 7%;
+
     }
   }
   
 `;
 
-
 export const Talleres = styled.div`
+    
+    display:none;
 
-    display:flex;
-    img{
-      display:none;
-    }
-    h2{
-      display:block;
-      color: #fff;
-      letter-spacing: 3px;
-      font-size: 30px;
-    }
-
-    @media (min-width: ${breakpoints.tablet}){
+    @media (min-width: ${breakpoints.laptop}){
 
       margin-top: 10%;
       width: 100%;
@@ -326,7 +344,8 @@ export const Talleres = styled.div`
     
     img{
       display:block;
-      width:90%;
+      width:100%;
+
     }
 
     h2{
@@ -338,64 +357,76 @@ export const Talleres = styled.div`
 
 export const QuienesSomos = styled.div`
 
-  display:flex;
-  max-width:100%;
-  flex-direction:column;
+  display:none;
 
-  img{
-    display:none;
-  }
 
-@media (min-width: ${breakpoints.tablet}){
+
+
+@media (min-width: ${breakpoints.laptop}){
     margin-top: 10%;
     margin-bottom: 10%;
     width: 100%;
-    display: grid;
-    grid-template-columns: 60% 40%;
+    display: flex;
+    max-width:100%;
+    flex-direction:column;
     
     img{
       display:block;
-      width:80%;
+      width:75%;
+      margin: 0 auto;
+      text-align:center;
     }
   } 
 `;
 
 export const ImagenSomosFamilia = styled.div`
-    margin-top:10%;
     img{
       display:block;
-      width:100%;
+      width:50%;
     }
     
     @media (min-width: ${breakpoints.tablet}){
       img{
-        width:20%;
+        width:35%;
+        margin-bottom:3%;
       }
     }
     
 `;
 
 export const TextosQuienesSomos = styled.div`
-    width: 100%;
+    width: 55%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #060621;
+    border-radius: 70px;
+    padding: 2%;
+    cursor: pointer;
+  transition: transform .4s ease-out;
+}  &:hover{
+    transform: scale(1.1);
+    box-shadow: 0 2px 3px 0 rgb(255 255 255 / 8%), 0 3px 10px 0 rgb(48 28 212 / 19%);
+  }
+}
     
     h3{
       color:  ${leerColor(colores.gris)};
-      margin-bottom: 8%;
-      font-style: italic;
+      margin-bottom: 3%;
       font-weight:500;
       line-height: 2em;
-      font-size:14px;
+      font-size:18px;
+      text-align:justify;
     }
 
     @media (min-width: ${breakpoints.tablet}){
     
 
     img{
-      width:80%;
+      width:20%;
     }
 
     h3{
-      font-size:14px;
+      font-size:20px;
     }
   } 
 

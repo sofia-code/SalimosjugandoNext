@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link'
+import {firebase} from "../../lib";
+const firebaseDB = firebase.database();
 /*import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';*/
-import { Header, Footer, Wrapper, Boton } from '../../components';
+import { Header, Footer, Wrapper, Boton, Filter } from '../../components';
 import { 
     Buscador,
     Form,
@@ -15,90 +17,64 @@ import {
 } from './styles';
 
 
-export default class BuscarEscuelaContainer extends Component {
-    render(){
+function BuscarEscuelaContainer () {
+    const [escuelas, setEscuelas] = useState([]);
+
+
+    const getData = async () => {
+       
+        firebaseDB.ref('escuelas').once('value', (snapshot) => {
+            const escuelasArr = [];
+            snapshot.forEach((childSnapshot) => {
+            escuelasArr.push({
+                id: childSnapshot.key,
+                ...childSnapshot.val()
+            })
+            })
+            // escuelasArr.reverse()
+            console.log('getData',escuelasArr);
+            setEscuelas(escuelasArr);
+        })
+
+       
+             
+    };
+
+ 
+    const [onFilterChange, barrio] =  useState([]);
+    console.log("escuelas: ",escuelas)
+    
+    useEffect(() => {
+        getData();
+    }, []);
+
     
     return (
     <>
         <Wrapper direction="column">
-      <Buscador>
-        <Form>
+        {/* <option value="select">Todos</option> */}
+        
 
-            <select name="Barrio" id="Barrio">
-                <option name="Barrio">Barrio</option>
-                <option value="Flores">Flores</option>
-                <option value="Caballito">Caballito</option>
-                <option value="Palermo">Palermo</option>
-                <option value="Boedo">Boedo</option>
-                <option value="Devoto">Devoto</option>
-                <option value="Villa Crespo">Villa Crespo</option>
+        <h2>Filtrar por barrio: </h2>
+      
+            <select onChange={onFilterChange} escuela={barrio}>           
+            {escuelas.map(escuela => <option value={escuela.barrio} key={escuela.barrio}>{escuela.barrio}</option>)}
             </select>
 
-
-            <input type="submit" value="Buscar" />
-        </Form>
-    </Buscador>
-
     <Resultados>
+        {escuelas.slice(0,10).map(escuela =>(
         <Card>
             <CardImg>
                 <img src= '/img/home/escuela5.jpg' />
             </CardImg>
                 <TitulosCard>
-                    <h2>Escuela Botincitos</h2>
-                    <h3>Palermo</h3>
-                    <h4>Edades: 8 a 12 años</h4>
-                    <h5>Horarios: 16 a 19 hs</h5>
+                    <h2>{escuela.name}</h2>
+                    <h3>{escuela.barrio}</h3>
+                    <h4>{escuela.direccion}</h4>
+                    <h5>Contacto: {escuela.telefono}</h5>
                 </TitulosCard>
         </Card>
-
-        <Card>
-            <CardImg>
-                <img src= '/img/home/escuela5.jpg' />
-            </CardImg>
-                <TitulosCard>
-                    <h2>Escuela Botincitos</h2>
-                    <h3>Palermo</h3>
-                    <h4>Edades: 8 a 12 años</h4>
-                    <h5>Horarios: 16 a 19 hs</h5>
-                </TitulosCard>
-        </Card>
-
-        <Card>
-            <CardImg>
-                <img src= '/img/home/escuela5.jpg' />
-            </CardImg>
-                <TitulosCard>
-                    <h2>Escuela Botincitos</h2>
-                    <h3>Palermo</h3>
-                    <h4>Edades: 8 a 12 años</h4>
-                    <h5>Horarios: 16 a 19 hs</h5>
-                </TitulosCard>
-        </Card>
-
-        <Card>
-            <CardImg>
-                <img src= '/img/home/escuela5.jpg' />
-            </CardImg>
-                <TitulosCard>
-                    <h2>Escuela Botincitos</h2>
-                    <h3>Palermo</h3>
-                    <h4>Edades: 8 a 12 años</h4>
-                    <h5>Horarios: 16 a 19 hs</h5>
-                </TitulosCard>
-        </Card>
-
-        <Card>
-            <CardImg>
-                <img src= '/img/home/escuela5.jpg' />
-            </CardImg>
-                <TitulosCard>
-                    <h2>Escuela Botincitos</h2>
-                    <h3>Palermo</h3>
-                    <h4>Edades: 8 a 12 años</h4>
-                    <h5>Horarios: 16 a 19 hs</h5>
-                </TitulosCard>
-        </Card>
+        ))}
     </Resultados>
 
 
@@ -106,8 +82,12 @@ export default class BuscarEscuelaContainer extends Component {
    
     </>
 
-);
-}
-}
+    )};
+export default BuscarEscuelaContainer;
 
-//export default HomeContainer;
+    // const filteredBarrio = async () =>{
+        
+    //     const dataFiltrada = _.filter(escuelas, escuela => escuela.barrio === 'Caballito')
+    //     setEscuelas(dataFiltrada)
+    // };
+    

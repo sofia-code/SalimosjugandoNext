@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
-import { ContainerHeader, Logo, Hamburguer } from './styles';
+import { ContainerHeader, Logo, Hamburguer, MobileHeader } from './styles';
 import { wrapper } from '../../components';
 import Wrapper from '../Wrapper';
 
 
 
 function Header (){
+
+  const [open, setOpen] = useState(false);
+
     return (
 
       <Wrapper>
@@ -19,16 +22,29 @@ function Header (){
                       </a> 
             </Logo>
 
-            <Hamburguer><img src="img/menu.svg" /></Hamburguer>
-
-              <ul id="nav">
+            
+                  <ul id= "nav" >
                   <li><Link href={"/"}>Home</Link></li>
-                  <li><Link href={"/torneos"}>Torneos</Link></li>
+                  {/* <li><Link href={"/torneos"}>Torneos</Link></li>  */}
                   <li><Link href={"/comunidad-padres"}>Comunidad de padres</Link></li>
                   <li><Link href={"/talleres"}>Talleres</Link></li>
                   <li><a href="/api/login">Registrarse</a></li>
-                  {/* <a href="/api/logout">Logout</a> */}
-                </ul>
+                  {/* <a href="/api/logout">Logout</a>  */}
+                </ul> 
+                <MobileHeader>
+                  <Hamburguer onClick={() => setOpen(!open)}><img src="img/menu.svg" /></Hamburguer>
+                  <div className={open ? 'dropdown' : 'dropup'}>
+                  <ul>
+                  <li><Link href={"/"}>Home</Link></li>
+                  {/* <li><Link href={"/torneos"}>Torneos</Link></li>  */}
+                  <li><Link href={"/comunidad-padres"}>Comunidad de padres</Link></li>
+                  <li><Link href={"/talleres"}>Talleres</Link></li>
+                  <li><a href="/api/login">Registrarse</a></li>
+                  {/* <a href="/api/logout">Logout</a>  */}
+                </ul> 
+                  </div>
+                  </MobileHeader>
+           
           </ContainerHeader>
         </Wrapper>
     );

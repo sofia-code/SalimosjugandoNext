@@ -117,7 +117,6 @@ export default class ComunidadPadresContainer extends Component {
                             </TextosSecciones>
                          </Wrapper>
                          <ImagenesSalimosManejando>
-                            <img src="/img/padres/combi1.jpg" />
                             <img src="/img/padres/combi2.jpg" />                 
                          </ImagenesSalimosManejando>
                     </SalimosManejando>   
