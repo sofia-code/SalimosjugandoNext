@@ -19,6 +19,8 @@ import {
 
 function BuscarEscuelaContainer () {
     const [escuelas, setEscuelas] = useState([]);
+    const [barrios, setBarrios] = useState([]);
+    const [escuelasOriginales, setEscuelasOriginales] = useState([]);
 
 
     const getData = async () => {
@@ -34,20 +36,40 @@ function BuscarEscuelaContainer () {
             // escuelasArr.reverse()
             console.log('getData',escuelasArr);
             setEscuelas(escuelasArr);
+            setEscuelasOriginales(escuelasArr);
+
+            const barriosFiltrados = filtrarBarrios(escuelasArr);
+
+            setBarrios(barriosFiltrados);
         })
 
-       
              
     };
 
+ const filtrarBarrios = (data) => 
+    data.reduce((acumulador, escuela) => {
+        if (!acumulador.includes(escuela.barrio)) return [...acumulador, escuela.barrio];
+        
+        return acumulador
+    }, []);
  
-    const [onFilterChange, barrio] =  useState([]);
-    console.log("escuelas: ",escuelas)
-    
+   
+    const onFilterChange = (event) =>{
+        const barrioSeleccionado = event.target.value;
+
+       if (barrioSeleccionado === "todos") setEscuelas(escuelasOriginales)
+       else {
+            const escuelasFiltradas = escuelasOriginales.filter(escuela => escuela.barrio === barrioSeleccionado);
+
+        setEscuelas(escuelasFiltradas);
+       }
+    }
+
     useEffect(() => {
         getData();
     }, []);
 
+    useEffect(() =>{} , [escuelas]);
     
     return (
     <>
@@ -56,16 +78,17 @@ function BuscarEscuelaContainer () {
         
 
         <h2>Filtrar por barrio: </h2>
-      
-            <select onChange={onFilterChange} escuela={barrio}>           
-            {escuelas.map(escuela => <option value={escuela.barrio} key={escuela.barrio}>{escuela.barrio}</option>)}
+        
+            <select onChange={onFilterChange}>   
+            <option value="todos">Todos</option>        
+            {barrios.map(barrio => <option value={barrio} key={barrio}>{barrio}</option>)}
             </select>
 
     <Resultados>
         {escuelas.slice(0,10).map(escuela =>(
         <Card>
             <CardImg>
-                <img src= '/img/home/escuela5.jpg' />
+                <img src= {escuela.imagen} />
             </CardImg>
                 <TitulosCard>
                     <h2>{escuela.name}</h2>
