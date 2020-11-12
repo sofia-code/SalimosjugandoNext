@@ -5,7 +5,7 @@ export const ContainerHeader = styled.div`
 
     width: 100%;
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 50% 60%;
     grid-template-rows: 1fr;
     align-items: center;
     padding: 10px 0;
@@ -14,10 +14,10 @@ export const ContainerHeader = styled.div`
       display:none;
     }
 
-    
 
-  @media (min-width: ${breakpoints.tablet}) {
     
+  @media (min-width: ${breakpoints.tablet}) {
+    grid-template-columns: 30% 70%;
 
     #nav {
         display:block;
@@ -54,16 +54,64 @@ export const ContainerHeader = styled.div`
 
 `;
 
+export const MobileHeader = styled.div`
+    div {
+      display: flex;
+      flex-direction:column;
+      background-color: ${leerColor(colores.azul)};
+      border-radius: 20px;
+      list-style-type: none;
+    }
+
+    ul {
+      list-style-type: none;
+      overflow: hidden;
+      border-radius: 20px;
+      color: #fff;
+    }
+  
+    ul li {
+      background-color: ${leerColor(colores.azul)};
+      font-size: 18px;
+      width:100%; 
+      margin-top:20%;
+      font-weight:bolder;
+    }
+
+  .dropdown {
+      display:flex;
+      flex-wrap: wrap;
+      position: absolute;
+      z-index: 99;
+      margin-bottom: 2%;
+    }
+
+    .dropdown a {
+      margin: 0;
+    }
+
+    .dropup {
+      display: none;
+    }
+
+    @media (min-width: ${breakpoints.tablet}) {
+      display:none;
+  }
+
+`;
+
+
 export const Hamburguer = styled.div`
       display: block;
-      max-width: 50%;
+      max-width: 90%;
+      margin-left: 65px;
      
       img {
-        width: 30%;
+        width: 40%;
         
       }
 
-      @media (min-width: ${breakpoints.mobileGrande}) {
+      @media (min-width: ${breakpoints.tablet}) {
         display:none;
 
   }
@@ -73,16 +121,19 @@ export const Logo = styled.div`
 
     position: relative;
     z-index: 2;
+    img {
+    width: 30%;
+  }
 
 
-@media (min-width: ${breakpoints.mobileGrande}) {
+@media (min-width: ${breakpoints.mobile}) {
 
   width: 100%;
   cursor: pointer;
   margin-left:20%;
   margin-top: 4%;
   img {
-    width: 13%;
+    width: 35%;
     transition: transform .2s;
   }
   
@@ -90,6 +141,14 @@ export const Logo = styled.div`
     transform: scale(1.5);
   
     }  
-
 }
+
+@media (min-width: ${breakpoints.notebook}) {
+
+  img {
+    width: 18%;
+    transition: transform .2s;
+  }
+}
+
 `;

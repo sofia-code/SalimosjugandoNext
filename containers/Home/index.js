@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import Slider from 'react-slick';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import firebase from "firebase";
+import {firebase} from "../../lib";
+const firebaseDB = firebase.database();
+
 /*import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';*/
 import { Header, Footer, Wrapper, Boton } from '../../components';
@@ -15,8 +16,7 @@ import {
     Card,
     CardImg,
     TitulosCard,
-    Torneitos,
-    HoyJuega,
+    ContenedorBoton,
     GrillaEscuelas,
     SalimosManejando,
     TextosSecciones,
@@ -29,42 +29,31 @@ import {
     ImagenSomosFamilia,
 } from './styles';
 
+  
+function HomeContainer() {
+        const [escuelas, setEscuelas] = useState([]);
+        const getData = async () => {
+           
+            firebaseDB.ref('escuelas').once('value', (snapshot) => {
+                const escuelasArr = [];
+                snapshot.forEach((childSnapshot) => {
+                escuelasArr.push({
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
+                })
+                })
+                // escuelasArr.reverse()
+                console.log('getData',escuelasArr);
+                setEscuelas(escuelasArr);
+            })
+        };
+        useEffect(() => {
+            getData();
+        }, []);
 
-export default class HomeContainer extends Component {
-    render(){
-        // (function(){
-            
-        //     const config = {
-        //         apiKey:process.env.FIREBASE_API_KEY,
-        //         authDomain:process.env.FIREBASE_AUTH_DOMAIN,
-        //         databaseURL:process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
-        //         projectId:process.env.FIREBASE_PROJECT_ID,
-        //         storageBucket:process.env.FIREBASE_STORAGE_BUCKET,
-        //         messagingSenderId: process.env.FIREBASE_SENDER_ID,
-        //         appId:process.env.FIREBASE_SENDER_APPID
-        //       };
-        //       if (!firebase.apps.length) {
-        //         firebase.initializeApp(config);
-        //     }
-            
-        //     const preObject =  document.getElementById('MK54eVspiihkUP7n1Vo');
-        //     const dbRefObject = firebase.database().ref().child('escuelas');
-        //     const ulList = document.getElementById('list');
-        //     const dbRefList = dbRefObject.child('name');
-
-        //     dbRefObject.on('value', snap => {
-        //         preObject.innerText = JSON.stringify(snap.val(), null, 3);
-        //     });
-
-        //     dbRefList.on('child_added', snap => console.log(snap.val()))
-
-
-        // }());
     return (
     <>
-     <Wrapper direction="column">
-        
-      </Wrapper>
+
             <EncontraEscuela>
                  <ContenedorSlider>
                     
@@ -73,83 +62,35 @@ export default class HomeContainer extends Component {
                         </div>
                     
                     <h1>ENCONTRÁ LA ESCUELA DE FÚTBOL IDEAL PARA TU HIJO/A</h1>
-                    <button><Boton><Link href={"/buscar-escuela"}>Buscar ahora</Link></Boton></button>
+                   <ContenedorBoton> <Boton><Link href={"/buscar-escuela"}>Buscar ahora</Link></Boton></ContenedorBoton>
                 </ContenedorSlider>
                              
 
             </EncontraEscuela>
 
-            <Wrapper direction="column">
+            <Wrapper>
 
                 <EscuelasRecomendadas> 
                     <h1>Escuelas Recomendadas</h1>
                     <GrillaEscuelas>
-                        <Card>
+                        {escuelas.slice(0,6).map(escuela =>(
+                            <Card>   
                             <CardImg>
                                 <img src= '/img/home/escuela4.jpg' />
                             </CardImg>
                             <TitulosCard>
-                                <h2>La Semilla</h2>
+                                <h2>{escuela.name}</h2>
                                 <hr />
-                                <h4>Flores</h4>
+                                <h4>{escuela.barrio}</h4>
                             </TitulosCard>
                         </Card>
-                        <Card>
-                            <CardImg>
-                                <img src= '/img/home/escuela1.jpg' />
-                            </CardImg>
-                            <TitulosCard>
-                                <h2>Botincitos FC</h2>
-                                <hr />
-                                <h4>Caballito</h4>
-                            </TitulosCard>
-                        </Card>
-                        <Card>
-                            <CardImg>
-                                <img src= '/img/home/escuela4.jpg' />
-                            </CardImg>
-                            <TitulosCard>
-                                <h2>La Gambeteada</h2>
-                                <hr />
-                                <h4>San Isidro</h4>
-                            </TitulosCard>
-                        </Card>
-                        <Card>
-                            <CardImg>
-                                <img src= '/img/home/escuela1.jpg' />
-                            </CardImg>
-                            <TitulosCard>
-                                <h2>Los Chiquititos FC</h2>
-                                <hr />
-                                <h4>Devoto</h4>
-                            </TitulosCard>
-                        </Card>
-                        <Card>
-                            <CardImg>
-                                <img src= '/img/home/escuela4.jpg' />
-                            </CardImg>
-                            <TitulosCard>
-                                <h2>Rayo Fútbol</h2>
-                                <hr />
-                                <h4>Boedo</h4>
-                            </TitulosCard>
-                        </Card>
-                        <Card>
-                            <CardImg>
-                                <img src= '/img/home/escuela1.jpg' />
-                            </CardImg>
-                            <TitulosCard>
-                                <h2>America League</h2>
-                                <hr />
-                                <h4>San Isidro</h4>
-                            </TitulosCard>
-                        </Card>
+                        ))}
                     </GrillaEscuelas>
                 </EscuelasRecomendadas>
             </Wrapper>
 
 
-                <Torneitos> 
+                {/* <Torneitos> 
                     <Wrapper>
                         <img src= '/img/home/Ttorneos.png' />
                     </Wrapper>
@@ -160,25 +101,8 @@ export default class HomeContainer extends Component {
                             <h4>Cancha "El polideportivo"</h4>
                             
                         </HoyJuega>
-                </Torneitos>
-               
-
-            
-
-                <Wrapper direction="column">
-                    <SalimosManejando>       
-                        <TextosSecciones>
-                            <img src="/img/home/Tsalimosmanejando.png" />
-                            <h1>¿No llegás a llevarlos?</h1>
-                            <h3>Contratá nuestra combi de Salimos Jugando para llevar y traer a tu hijo a la escuelita de fútbol.</h3>
-                            <Boton>Ver Más</Boton>
-                        </TextosSecciones>
-                        <img src="/img/home/salimosManejando.png" />
-                    </SalimosManejando>   
-                </Wrapper>
-
-
-                <PadresFondo>
+                </Torneitos> */}
+             <PadresFondo>
                     <Padres>
                         <TextosPadres>
                             <Wrapper direction="column">
@@ -186,58 +110,70 @@ export default class HomeContainer extends Component {
                                 <h3>¡Sumate! Sé parte de la comunidad para disfrutar de 
                                 beneficios, acceder a los talleres para tu hijo
                                 y muchas cosas más!</h3>
-                                <Boton>Registrate</Boton>
+                                <Boton><a href="/api/login">Registrate</a></Boton>
                             </Wrapper>
                         </TextosPadres>
                     </Padres>  
                 </PadresFondo>
 
-                <Wrapper direction="column">
-                    <Talleres>       
+                <Wrapper direction = "column">
+                <Talleres>       
                         <TextosSecciones>
                             <img src="/img/home/Ttalleres.png" />
                             <h2>Talleres</h2>
-                            <h1>En casa, ¡todos los días!</h1>
-                            <h3>Hoy: Estratégias fútbolísticas con dibujos a cargo del profe Martin Messe</h3>
-                            <Boton>Ver Más</Boton>
+                            <h1>En casa, ¡todos los fin de semana!</h1>
+                            <Boton><Link href={"/talleres"}>Ver Más</Link></Boton>
                         </TextosSecciones>
                             <img src="/img/home/talleres.png" />
-                    </Talleres>         
-
-                <QuienesSomos>
-                    <img src="/img/home/quienesSomos.png" />
-                    <TextosQuienesSomos>
+                    </Talleres>      
+                    <SalimosManejando>    
+                        <img src="/img/home/combi.png" />   
+                        <TextosSecciones>
+                            <img src="/img/home/Tsalimosmanejando.png" />
+                            <h1>¿No llegás a llevarlos?</h1>
+                            <Boton><Link href={"/comunidad-padres"}>Ver Más</Link></Boton>
+                        </TextosSecciones>    
+                    </SalimosManejando>   
+                       
+                </Wrapper>
+               
+                 <QuienesSomos>
                     <ImagenSomosFamilia><img src="/img/home/somosFamilia.png" /></ImagenSomosFamilia>
-                    <h3>Somos un grupo de profesionales aficionados por el fútbol que 
-                    buscan impulsar la educación futbolística desde temprana edad. <br /><br />
+                    <img src="/img/home/somos.png" />
+                    <TextosQuienesSomos>
+                    
+                    <h3>¡Hola! Somos un grupo de profesionales aficionados por el fútbol que 
+                    buscan impulsar la educación futbolística desde temprana edad.
 
                     Nuestro objetivo es brindarte los servicios que se 
-                    adapten a tus necesidades y a las de tus hijos. <br /><br />
-
+                    adapten a tus necesidades y a las de tus hijos. 
+                   
                     Formá parte de Salimos Jugando y sumate a un espacio donde puedas
-                    conocer personas y compartir la pasión por el fútbol.</h3>
+                    conocer personas y compartir la pasión por el fútbol junto con tus hijos.</h3>
                      <Boton><a mp-mode="dftl" href= "https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=203413372-474341f6-4d95-442c-a1aa-eaa78feee2a9" name="MP-payButton">Donar </a></Boton>
                     </TextosQuienesSomos>       
 
-                </QuienesSomos>    
-        </Wrapper>
+                </QuienesSomos>     
+       
     </>
     );
   }
-}
 
 
-export async function getServerSideProps({ req, res }) {
-    const session = await auth0.getSession(req);
-    if (!session || !session.user) {
-      res.writeHead(302, {
-        Location: "/api/login",
-      });
-      res.end();
-      return {};
-    }
-    return { props: { user: session.user } };
-  }
+export default HomeContainer;
 
-//export default HomeContainer;
+
+    // export async function getServerSideProps({ req, res }) {
+    //     const session = await auth0.getSession(req);
+    //     if (!session || !session.user) {
+    //     res.writeHead(302, {
+    //         Location: "/api/login",
+    //     });
+    //     res.end();
+    //     return {};
+    //     }
+    //     return { props: { user: session.user } };
+    // }
+
+
 // <YouTube videoId="SIhkSwaIJlw" opts={opts} />; 

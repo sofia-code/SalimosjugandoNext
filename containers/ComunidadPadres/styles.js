@@ -133,13 +133,14 @@ export const SalimosManejando = styled.div`
     margin-top: 5%;
     width: 100%;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: inherit;
+
 `;
 
 export const TextosSecciones = styled.div`
     display: flex;
     flex-direction: column;
-    width:100%;
+    width:50%;
  
     h1{    
       color: ${leerColor(colores.celeste)};
@@ -160,7 +161,7 @@ export const ImagenesSalimosManejando = styled.div`
     width:100%;
     display:flex;
     img{
-     width:50%;
+      width: 100%;
 	}
 `;
 

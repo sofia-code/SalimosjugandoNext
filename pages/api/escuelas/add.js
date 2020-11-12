@@ -4,7 +4,7 @@ const firebaseDB = firebase.database();
 
 export default async (req, res) => {
     try {
-      const { name } = req.body;
+      const { name, direccion, barrio, telefono } = req.body;
       // //Add auth0
       // const session = await auth0.getSession(req);
       // if (!session || !session.user) {
@@ -26,6 +26,9 @@ export default async (req, res) => {
         status: "added",
         id: responseKey,
         name,
+        direccion,
+        barrio,
+        telefono
       });
     } catch (error) {
       console.error(error);

@@ -3,35 +3,20 @@ import { breakpoints, leerColor, colores } from '../../constants';
 
 
 
-export const Buscador = styled.div`
-   width: 100%;
-`;
-
-export const Form = styled.div`
-  
-select{
-    padding: 7px;
-    width: 15%;
-    font-weight: 800;
-    background-color: hsl(0,0%,96.1%);
-    margin-right: 2%;
-}
-  input{
-    background-color: hsl(185.5,100%,42.5%);
-    padding: 10px;
-    width: 10%;
-    font-weight: 800;
-    color: hsl(0,0%,96.1%);
-    border: none;
-    margin-top: 5%;
-  }
-`;
 
 export const Resultados = styled.div`
    width:100%;
    margin-top:5%;
    display:flex;
-   flex-wrap: wrap;
+   flex-direction:column;
+   
+
+
+   @media (min-width: ${breakpoints.laptopL}) {
+    flex-direction:row;
+    flex-wrap: wrap;
+    
+   }
 `;
 
 
@@ -42,8 +27,13 @@ export const Card = styled.a`
   flex-direction: row;
   margin-bottom: 5%;
   margin-right: 5%;
-  width: 45%;
+  width: 100%;
   cursor: pointer;
+
+  
+  @media (min-width: ${breakpoints.laptopL}) {
+    width: 45%;
+   }
   
 `;
 
