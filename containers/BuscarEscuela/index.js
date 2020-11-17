@@ -107,20 +107,7 @@ function BuscarEscuelaContainer () {
                         </Card>
                         ))}
                     </GrillaEscuelas>
-              
-        {/* {escuelas.map(escuela =>(
-        <Card onClick={() => setOpen(!open)}>
-            <div className={open ? 'modalOn' : 'modalOff'}></div>
-            <CardImg>
-                <img src= {escuela.imagen} />
-            </CardImg>
-                <TitulosCard>
-                    <h2>{escuela.name}</h2>
-                    <h3>{escuela.barrio}</h3>
-                    <h4>{escuela.direccion}</h4>
-                    <h5>Contacto: {escuela.telefono}</h5>
-                </TitulosCard>
-        </Card> */}
+      
         ))
     </Resultados>
 
