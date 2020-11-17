@@ -8,7 +8,8 @@ import 'slick-carousel/slick/slick-theme.css';*/
 import { Header, Footer, Wrapper, Boton, Filter } from '../../components';
 import { 
     Buscador,
-    Form,
+    Filtro,
+    GrillaEscuelas,
     Resultados,
     Card,
     CardImg,
@@ -18,6 +19,7 @@ import {
 
 
 function BuscarEscuelaContainer () {
+    const [open, setOpen] = useState(false);
     const [escuelas, setEscuelas] = useState([]);
     const [barrios, setBarrios] = useState([]);
     const [escuelasOriginales, setEscuelasOriginales] = useState([]);
@@ -74,19 +76,41 @@ function BuscarEscuelaContainer () {
     return (
     <>
         <Wrapper direction="column">
-        {/* <option value="select">Todos</option> */}
         
-
-        <h2>Filtrar por barrio: </h2>
+        <Filtro>
+            <h2>Filtrar por barrio: </h2>
+            
+                <select onChange={onFilterChange}>   
+                <option value="todos">Todos</option>        
+                {barrios.map(barrio => <option value={barrio} key={barrio}>{barrio}</option>)}
+                </select>
+        </Filtro>
         
-            <select onChange={onFilterChange}>   
-            <option value="todos">Todos</option>        
-            {barrios.map(barrio => <option value={barrio} key={barrio}>{barrio}</option>)}
-            </select>
+        
+      
+        
 
     <Resultados>
-        {escuelas.slice(0,10).map(escuela =>(
-        <Card>
+                    <GrillaEscuelas>
+                        {escuelas.map(escuela =>(
+                            <Card>   
+                            <CardImg>
+                                <img src= {escuela.imagen}/>
+                            </CardImg>
+                            <TitulosCard>
+                                <h2>{escuela.name}</h2>
+                                <hr />
+                                <h3>{escuela.barrio}</h3>
+                                <h4>Dirección: {escuela.direccion}</h4>
+                                <h5>Contacto: {escuela.telefono}</h5>
+                            </TitulosCard>
+                        </Card>
+                        ))}
+                    </GrillaEscuelas>
+              
+        {/* {escuelas.map(escuela =>(
+        <Card onClick={() => setOpen(!open)}>
+            <div className={open ? 'modalOn' : 'modalOff'}></div>
             <CardImg>
                 <img src= {escuela.imagen} />
             </CardImg>
@@ -96,8 +120,8 @@ function BuscarEscuelaContainer () {
                     <h4>{escuela.direccion}</h4>
                     <h5>Contacto: {escuela.telefono}</h5>
                 </TitulosCard>
-        </Card>
-        ))}
+        </Card> */}
+        ))
     </Resultados>
 
 

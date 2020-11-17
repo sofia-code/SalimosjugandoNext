@@ -14,7 +14,7 @@ export const Talleres = styled.div`
 export const TalleresFondo = styled.div`
   background-image: url("../img/talleres/portada.jpg");
   background-size: cover;
-  height: 900px;
+  height: 700px;
   width: 100%;
 `;
 
@@ -56,6 +56,9 @@ export const TallerHoy = styled.div`
     width: 100%;  
     margin-top: 5%;
     text-align:center;
+    background-color: #020719;
+    padding: 2%;
+    border-radius: 25px;
 `;
 
 export const TallerHoyTextos = styled.div`
@@ -96,21 +99,6 @@ export const CardImg = styled.div`
 
 `;
 
-export const TitulosCard = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  h2{
-    font-size: 24px;
-    color: ${leerColor(colores.gris)};
-    background-color: ${leerColor(colores.celeste)};
-    text-transform: uppercase;
-    font-weight: 800;
-    display:flex;
-    padding: 5px;
-  }
-
-`;
 
 
 export const TextosSecciones = styled.div`
@@ -132,14 +120,6 @@ export const TextosSecciones = styled.div`
 
 `;
 
-export const ImagenesSalimosManejando = styled.div`
-    margin-top: 2%;
-    width:100%;
-    display:flex;
-    img{
-     width:50%;
-	}
-`;
 
 
 export const ActividadesTalleres = styled.div`

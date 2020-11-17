@@ -1,0 +1,32 @@
+
+@font-face {
+  font-family: 'Zing';
+  src: url('./fonts/Zing/ZingRustD2Demo-Base.woff2') format('woff2'),
+      url('./fonts/Zing/ZingRustD2Demo-Base.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Zing';
+  src: url('./fonts/Zing/ZingRustDemo-Base.woff2') format('woff2'),
+      url('./fonts/Zing/ZingRustDemo-Base.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Zing';
+  src: url('./fonts/Zing/ZingRustDemo-Sh1.woff2') format('woff2'),
+      url('./fonts/Zing/ZingRustDemo-Sh1.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Zing';
+  src: url('./fonts/Zing/ZingRustLH1Demo-Fill.woff2') format('woff2'),
+      url('./fonts/Zing/ZingRustLH1Demo-Fill.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}

@@ -13,12 +13,7 @@ export const breakpoints = {
 
 export const leerColor = color => color.hsl().string();
 
-/**
- *
- * Para definir un color utilizamos la librería colors. (Importada arriba). Esto nos permite tener colores exactos a traves de las distintas pantallas.
- * Además podemos hacer ajustes sobre la opacidad, brillo y otras variables del color.
- *
- *
+/*
  *
  * Documentación: https://github.com/Qix-/color#readme [IMPORTANTE LEER]
  *

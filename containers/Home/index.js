@@ -74,15 +74,16 @@ function HomeContainer() {
                     <h1>Escuelas Recomendadas</h1>
                     <GrillaEscuelas>
                         {escuelas.slice(0,6).map(escuela =>(
-                            <Card>   
+                            <Card href={"/buscar-escuela"}> 
                             <CardImg>
-                                <img src= '/img/home/escuela4.jpg' />
+                                <img src= {escuela.imagen}/>
                             </CardImg>
                             <TitulosCard>
                                 <h2>{escuela.name}</h2>
                                 <hr />
                                 <h4>{escuela.barrio}</h4>
                             </TitulosCard>
+                           
                         </Card>
                         ))}
                     </GrillaEscuelas>

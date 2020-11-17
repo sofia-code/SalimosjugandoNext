@@ -3,68 +3,36 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
-    font-family: 'Chivo';
-    src: url('./fonts/Chivo/Chivo-Italic.woff2') format('woff2'),
-        url('./fonts/Chivo/Chivo-Italic.woff') format('woff');
+    font-family: 'Zing';
+    src: url('./fonts/Zing/ZingRustD2Demo-Base.woff2') format('woff2'),
+        url('./fonts/Zing/ZingRustD2Demo-Base.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Chivo';
-    src: url('./fonts/Chivo/Chivo-Light.woff2') format('woff2'),
-        url('./fonts/Chivo/Chivo-Light.woff') format('woff');
-    font-weight: 300;
+    font-family: 'Zing';
+    src: url('./fonts/Zing/ZingRustDemo-Base.woff2') format('woff2'),
+        url('./fonts/Zing/ZingRustDemo-Base.woff') format('woff');
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Chivo';
-    src: url('./fonts/Chivo/Chivo-Regular.woff2') format('woff2'),
-        url('./fonts/Chivo/Chivo-Regular.woff') format('woff');
+    font-family: 'Zing';
+    src: url('./fonts/Zing/ZingRustDemo-Sh1.woff2') format('woff2'),
+        url('./fonts/Zing/ZingRustDemo-Sh1.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Chivo';
-    src: url('./fonts/Chivo/Chivo-BoldItalic.woff2') format('woff2'),
-        url('./fonts/Chivo/Chivo-BoldItalic.woff') format('woff');
+    font-family: 'Zing';
+    src: url('./fonts/Zing/ZingRustLH1Demo-Fill.woff2') format('woff2'),
+        url('./fonts/Zing/ZingRustLH1Demo-Fill.woff') format('woff');
     font-weight: bold;
     font-style: italic;
 }
 
-@font-face {
-    font-family: 'Chivo';
-    src: url('./fonts/Chivo/Chivo-Black.woff2') format('woff2'),
-        url('./fonts/Chivo/Chivo-Black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Chivo';
-    src: url('./fonts/Chivo/Chivo-Bold.woff2') format('woff2'),
-        url('./fonts/Chivo/Chivo-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Chivo';
-    src: url('./fonts/Chivo/Chivo-BlackItalic.woff2') format('woff2'),
-        url('./fonts/Chivo/Chivo-BlackItalic.woff') format('woff');
-    font-weight: 900;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Chivo';
-    src: url('./fonts/Chivo/Chivo-LightItalic.woff2') format('woff2'),
-        url('./fonts/Chivo/Chivo-LightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-}
 
 @font-face {
   font-family: 'Proxima Nova';

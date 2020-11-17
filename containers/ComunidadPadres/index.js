@@ -113,7 +113,7 @@ export default class ComunidadPadresContainer extends Component {
                             <TextosSecciones>
                                 <h1>Salimos Manejando</h1>
                                 <h3>Más de 50 familias contrataron nuestra combi de Salimos Jugando para llevar y traer a sus hijos a la escuelita de fútbol. Te garantizamos el viaje de manera segura y a un costo accesible. </h3>
-                                <Boton>Contactar ahora</Boton>
+                                <h4>Llama ahora: 011 2345 6789</h4>
                             </TextosSecciones>
                          </Wrapper>
                          <ImagenesSalimosManejando>
@@ -129,32 +129,22 @@ export default class ComunidadPadresContainer extends Component {
                             <h1>Actividades pensadas para vos</h1>
                         </TextosSecciones>
                         <LasActividades>
-                            <div>
+                          
                             <CardImgActividades>
                                 <img src="/img/padres/actividades1.jpg" />
-                            </CardImgActividades>
                                 <h1>Fútbol padres</h1>
-                                <h2>Lunes y Miércoles 20hs</h2>
-                                <h2>Sede "El Polideportivo"</h2>
-                            </div> 
-
-                              <div>
+                            </CardImgActividades>
+                                              
                                  <CardImgActividades>
                                     <img src="/img/padres/actividades2.jpg" />
+                                    <h1>Spinning intensivo</h1>
                                  </CardImgActividades>
-                                <h1>Spinning</h1>
-                                <h2>Jueves y Sábados 10hs</h2>
-                                <h2>Sede "Megatlon Caballito"</h2>
-                            </div> 
-
-                              <div>
+                                            
                                 <CardImgActividades>
                                     <img src="/img/padres/actividades3.jpg" />
+                                    <h1>Funcional Training</h1>
                                 </CardImgActividades>
-                                <h1>Funcional</h1>
-                                <h2>Martes y Viernes 19:30hs</h2>
-                                <h2>Sede "Sport Club Flores"</h2>
-                            </div> 
+                              
                           
                         </LasActividades>
                   </ActividadesPadres>  

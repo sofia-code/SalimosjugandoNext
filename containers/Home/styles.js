@@ -133,7 +133,7 @@ export const Card = styled.a`
     transform: scale(1.1);
     box-shadow: 0 2px 3px 0 rgb(255 255 255 / 8%), 0 3px 10px 0 rgb(48 28 212 / 19%);
   }
-}
+
 `;
 
 export const CardImg = styled.div`  
@@ -407,7 +407,7 @@ export const TextosQuienesSomos = styled.div`
     transform: scale(1.1);
     box-shadow: 0 2px 3px 0 rgb(255 255 255 / 8%), 0 3px 10px 0 rgb(48 28 212 / 19%);
   }
-}
+
     
     h3{
       color:  ${leerColor(colores.gris)};
@@ -428,7 +428,7 @@ export const TextosQuienesSomos = styled.div`
     h3{
       font-size:20px;
     }
-  } 
+  
 
 `;
 

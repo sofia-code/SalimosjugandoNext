@@ -24,31 +24,40 @@ export const TextosPadres = styled.div`
     display: flex;
     flex-direction: column;
   
-    h1{
-      position:relative;
-      top: 140px;
-      left: 0px;
-      left: 235px;
-      width: 36%;
-      color: #fff;
-      background-color:  ${leerColor(colores.celeste)};
- 
-      font-size: 60px;
-      text-align: initial;
-      letter-spacing: 3px;
-    }
-
-    h3{
+  h1{
+    position: relative;
+    top: 140px;
+    left: 0px;
+    width: 100%;
+    color: #fff;
+    background-color:  ${leerColor(colores.celeste)};   
+    font-size: 60px;
+    text-align: initial;
+    letter-spacing: 3px;
+  }
+  h3{
       color:  ${leerColor(colores.gris)};
-      width: 30%;
+      width: 90%;
       margin-bottom: 8%;
       position:relative;
       top: 110px;
       left: 0px;
-      left: 235px;
       font-weight:700;
       font-size: 24px;
     }
+
+    @media (min-width: ${breakpoints.laptop}) {
+      h1{
+      left: 235px;
+      width: 36%;        
+    }
+
+      h3{
+        left: 235px;
+        width: 30%;
+      }
+   
+      }
 `;
 
 
@@ -59,17 +68,29 @@ export const DescuentoSemana = styled.div`
 
     h1{
       margin-bottom: 5%;
-      width: 40%;
+      width: 45%;
       color: ${leerColor(colores.gris)};
       background-color: ${leerColor(colores.rosa)};
       font-size: 38px;
-      letter-spacing: 3px;
+      letter-spacing: 1px;
+    }
+
+    @media (min-width: ${breakpoints.laptop}) {
+      width: 100%;
     }
     
 `;
 
 export const Descuentos = styled.div`
       display: flex;
+      flex-direction: column;
+
+
+      @media (min-width: ${breakpoints.laptop}) {
+        flex-direction: row;
+        grid-column-gap: 150px;
+
+      }
 `;
 
 
@@ -86,12 +107,20 @@ export const Card = styled.a`
 
 export const CardImg = styled.div`
     height: 250px;
-    width: 150px;
+    width: 250px;
     img{
-     width: 200%;
+    width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 150px;
+    }
+
+    @media (min-width: ${breakpoints.laptop}) {
+      width: 150px;
+
+      img{
+        width: 200%;
+      }
     }
 
 `;
@@ -99,6 +128,7 @@ export const CardImg = styled.div`
 export const TitulosCard = styled.div`
   display: flex;
   flex-direction: column;
+  
 
   h2{
     font-size: 24px;
@@ -133,72 +163,94 @@ export const SalimosManejando = styled.div`
     margin-top: 5%;
     width: 100%;
     display: flex;
-    flex-wrap: inherit;
+    flex-direction: column;
+
+    @media (min-width: ${breakpoints.laptop}) {
+      flex-direction: row;
+
+    }
 
 `;
 
 export const TextosSecciones = styled.div`
+    margin-top: 15%;
     display: flex;
     flex-direction: column;
-    width:50%;
- 
+    width:100%;
+    text-align: center;
     h1{    
+      
       color: ${leerColor(colores.celeste)};
-      font-size: 40px;
-      letter-spacing: 3px;
+      font-size: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     h3{
       color:  ${leerColor(colores.gris)};
       margin-bottom: 2%;
-      width:55%;
     }
 
+    h4{
+      color:  ${leerColor(colores.gris)};
+      background-color:  ${leerColor(colores.rosa)};
+      padding: 2%;
+      font-weight: bold;
+      font-size: 20px;
+      width: 60%;
+    }
+
+    @media (min-width: ${breakpoints.laptop}) {
+      width:60%;
+      text-align: left;
+
+      h1{    
+      font-size: 40px;
+    }
+   }
 `;
 
 export const ImagenesSalimosManejando = styled.div`
+    width: 100%;
     margin-top: 2%;
-    width:100%;
     display:flex;
+    
     img{
       width: 100%;
-	}
+    }
 `;
 
 
 export const ActividadesPadres = styled.div`
-    margin-top: 10%;
+
     margin-bottom: 10%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+
 `;
 
 export const LasActividades = styled.div`
     margin-top: 5%;
     width: 100%;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-column-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    grid-column-gap: 250px;
 
     img{
-        width: 250%!important;
-        height: 350px!important;
-        object-fit: cover;
+        width: 100%auto;
         border-radius: 250px!important;
-	}
+	  }
 
     h1{
-        font-size: 24px;
+        font-size: 18px;
         color: ${leerColor(colores.gris)};
         background-color: ${leerColor(colores.rosa)};
         text-transform: uppercase;
         font-weight: 800;
         display:flex;
         padding: 5px;
-        width:50%;
-      
-
+        width:100%;
 	}
 
     h2, h3{
@@ -206,21 +258,37 @@ export const LasActividades = styled.div`
       margin-bottom: 2%;
       width:80%;
       font-size: 18px;
-	}
+  }
+  
+  @media (min-width: ${breakpoints.laptopL}) {
+
+    flex-direction: row;
+
+    h1{
+        font-size: 30px;
+    }
+    img{
+      width: 200%auto;
+
+    }
+
+  }
 
 `;
 
 
-
 export const CardImgActividades = styled.div`
-    height: 385px;
-    width: 150px;
+   
     img{
-     width: 200%;
+     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 150px;
     }
+
+    @media (min-width: ${breakpoints.notebook}) {
+    width: 250%;
+  }
 
 `;
 
