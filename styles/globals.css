@@ -1,9 +1,40 @@
+@font-face {
+  font-family: 'Zing';
+  src: url('../public/fonts/Zing/ZingRustD2Demo-Base.woff2') format('woff2'),
+      url('../public/fonts/Zing/ZingRustD2Demo-Base.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Zing-normal';
+  src: url('../public/fonts/Zing/ZingRustDemo-Base.woff2') format('woff2'),
+      url('../public/fonts/Zing/ZingRustDemo-Base.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Zing';
+  src: url('../public/fonts/Zing/ZingRustDemo-Sh1.woff2') format('woff2'),
+      url('../public/fonts/Zing/ZingRustDemo-Sh1.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Zing';
+  src: url('../public/fonts/Zing/ZingRustLH1Demo-Fill.woff2') format('woff2'),
+      url('../public/fonts/Zing/ZingRustLH1Demo-Fill.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+
 html,
 body {
   padding: 0;
   margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Zing-normal;
     background-color:#0D142C;
 }
 

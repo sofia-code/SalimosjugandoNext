@@ -58,7 +58,7 @@ export const ContenedorSlider = styled.div`
         position:absolute;
         left: 220px;
         top: 300px;
-        font-size: 60px;
+        font-size: 70px;
         text-align: center;
         letter-spacing: 3px;
       }

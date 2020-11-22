@@ -64,8 +64,6 @@ function HomeContainer() {
                     <h1>ENCONTRÁ LA ESCUELA DE FÚTBOL IDEAL PARA TU HIJO/A</h1>
                    <ContenedorBoton> <Boton><Link href={"/buscar-escuela"}>Buscar ahora</Link></Boton></ContenedorBoton>
                 </ContenedorSlider>
-                             
-
             </EncontraEscuela>
 
             <Wrapper>
@@ -91,18 +89,7 @@ function HomeContainer() {
             </Wrapper>
 
 
-                {/* <Torneitos> 
-                    <Wrapper>
-                        <img src= '/img/home/Ttorneos.png' />
-                    </Wrapper>
-                        <HoyJuega>
-                            <img src= '/img/torneos/equipo1.png' />
-                            <img src= '/img/torneos/equipo2.png' />
-                            <h3>Martes 3 de Noviembre | 16 hs</h3>
-                            <h4>Cancha "El polideportivo"</h4>
-                            
-                        </HoyJuega>
-                </Torneitos> */}
+    
              <PadresFondo>
                     <Padres>
                         <TextosPadres>
@@ -151,7 +138,10 @@ function HomeContainer() {
                    
                     Formá parte de Salimos Jugando y sumate a un espacio donde puedas
                     conocer personas y compartir la pasión por el fútbol junto con tus hijos.</h3>
-                     <Boton><a mp-mode="dftl" href= "https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=203413372-474341f6-4d95-442c-a1aa-eaa78feee2a9" name="MP-payButton">Donar </a></Boton>
+                     <Boton><a mp-mode="dftl" href= "https://mpago.la/1bnhPkz" name="MP-payButton">Donar </a></Boton>
+                     
+
+
                     </TextosQuienesSomos>       
 
                 </QuienesSomos>     
