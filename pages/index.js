@@ -1,13 +1,17 @@
-import React from 'react';
-import auth0 from '../lib/auth0'
-import {Layout, Home as HomeContainer} from "../containers";
+import React from "react";
+import { Layout, Home as HomeContainer } from "../containers";
+import { useFetchUser, UserProvider } from "../lib/user";
 
-function Index(){
-    return(
-        <Layout>
-            <HomeContainer />
-        </Layout>
-    )
+function Index() {
+  const { user, loading } = useFetchUser();
+
+  return (
+    <UserProvider value={{ user, loading }}>
+      <Layout>
+        <HomeContainer />
+      </Layout>
+    </UserProvider>
+  );
 }
 
 // export async function getServerSideProps({ req, res }) {
@@ -21,6 +25,5 @@ function Index(){
 //     }
 //     return { props: { user: session.user } };
 //   }
-
 
 export default Index;
