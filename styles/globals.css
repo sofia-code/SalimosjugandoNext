@@ -14,7 +14,7 @@
 }
 
 @font-face {
-  font-family: 'Zing';
+  font-family: 'Zing-rara';
   src: url('../public/fonts/Zing/ZingRustDemo-Sh1.woff2') format('woff2'),
       url('../public/fonts/Zing/ZingRustDemo-Sh1.woff') format('woff');
   font-weight: normal;
@@ -22,7 +22,7 @@
 }
 
 @font-face {
-  font-family: 'Zing';
+  font-family: 'Zing-rara2';
   src: url('../public/fonts/Zing/ZingRustLH1Demo-Fill.woff2') format('woff2'),
       url('../public/fonts/Zing/ZingRustLH1Demo-Fill.woff') format('woff');
   font-weight: bold;

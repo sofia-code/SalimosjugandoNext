@@ -27,6 +27,7 @@ import {
     QuienesSomos,
     TextosQuienesSomos,
     ImagenSomosFamilia,
+    FormularioContacto,
 } from './styles';
 
   
@@ -109,7 +110,7 @@ function HomeContainer() {
                         <TextosSecciones>
                             <img src="/img/home/Ttalleres.png" />
                             <h2>Talleres</h2>
-                            <h1>En casa, ¡todos los fin de semana!</h1>
+                            <h1>En casa, ¡todos los fines de semana!</h1>
                             <Boton><Link href={"/talleres"}>Ver Más</Link></Boton>
                         </TextosSecciones>
                             <img src="/img/home/talleres.png" />
@@ -138,13 +139,32 @@ function HomeContainer() {
                    
                     Formá parte de Salimos Jugando y sumate a un espacio donde puedas
                     conocer personas y compartir la pasión por el fútbol junto con tus hijos.</h3>
-                     <Boton><a mp-mode="dftl" href= "https://mpago.la/1bnhPkz" name="MP-payButton">Donar </a></Boton>
+                     <Boton><a mp-mode="dftl" href= "https://mpago.la/1bnhPkz" target="_blank" name="MP-payButton">Donar </a></Boton>
                      
 
 
                     </TextosQuienesSomos>       
 
                 </QuienesSomos>     
+
+
+                <FormularioContacto>
+                <Wrapper>
+                    <h2>¡Contactanos!</h2>
+                </Wrapper>
+                <form method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input id="nombre" type="text" name="nombre" placeholder="Nombre y Apellido" required="" />
+
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" name="email" placeholder="ejemplo@correo.com" required="" />
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required=""></textarea>
+                    <input id="submit" type="submit" name="submit" value="Enviar" />
+                </form>
+
+                </FormularioContacto>
        
     </>
     );

@@ -33,11 +33,11 @@ export const ContainerHeader = styled.div`
       display: block;
       padding: 8px 15px;
       text-decoration: none;
-      font-weight: bold;
       color: #ccc;
-      font-size: 14px;
+      font-size: 18px;
       transition: all 2s ease;
       transition: transform 0.2s;
+      letter-spacing:1px;
     }
 
     #nav li p {
@@ -71,6 +71,7 @@ export const MobileHeader = styled.div`
     overflow: hidden;
     border-radius: 20px;
     color: #fff;
+    
   }
 
   ul li {
@@ -99,6 +100,8 @@ export const MobileHeader = styled.div`
 
   @media (min-width: ${breakpoints.tablet}) {
     display: none;
+
+ 
   }
 `;
 

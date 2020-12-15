@@ -160,19 +160,20 @@ export const ContenedorImagenes = styled.div`
 
 
 export const SalimosManejando = styled.div`
+
     margin-top: 5%;
     width: 100%;
     display: flex;
     flex-direction: column;
 
-    @media (min-width: ${breakpoints.laptop}) {
+    @media (min-width: ${breakpoints.laptopL}) {
       flex-direction: row;
-
     }
 
 `;
 
 export const TextosSecciones = styled.div`
+  margin-bottom: 7%;
     margin-top: 15%;
     display: flex;
     flex-direction: column;
@@ -181,14 +182,16 @@ export const TextosSecciones = styled.div`
     h1{    
       
       color: ${leerColor(colores.celeste)};
-      font-size: 20px;
+      font-size: 30px;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
     h3{
       color:  ${leerColor(colores.gris)};
-      margin-bottom: 2%;
+      margin-bottom: 7%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      
     }
 
     h4{
@@ -198,6 +201,8 @@ export const TextosSecciones = styled.div`
       font-weight: bold;
       font-size: 20px;
       width: 60%;
+      margin: 3px auto;
+     
     }
 
     @media (min-width: ${breakpoints.laptop}) {
@@ -207,17 +212,22 @@ export const TextosSecciones = styled.div`
       h1{    
       font-size: 40px;
     }
+
+    h4{    
+      margin: 0;
+    }
    }
 `;
 
 export const ImagenesSalimosManejando = styled.div`
-    width: 100%;
-    margin-top: 2%;
+    width: 100%auto;
     display:flex;
-    
-    img{
-      width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: ${breakpoints.laptopL}) {
+      margin: 0;
     }
+  
 `;
 
 

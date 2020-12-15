@@ -358,13 +358,15 @@ export const Talleres = styled.div`
 export const QuienesSomos = styled.div`
 
   display:none;
+  font-family:Roboto;
+  font-weight:bold;
 
 
 
 
 @media (min-width: ${breakpoints.laptop}){
     margin-top: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     width: 100%;
     display: flex;
     max-width:100%;
@@ -427,10 +429,72 @@ export const TextosQuienesSomos = styled.div`
 
     h3{
       font-size:20px;
-    }
-  
-
+    }    
 `;
+
+
+export const FormularioContacto = styled.div`
+    background-image: url("../img/home/red.png");
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 3%;
+    padding-bottom:2%;
+
+    h2{
+      color:  ${leerColor(colores.rosa)};
+      font-size:55px;
+      letter-spacing:2px;
+    }
+
+      label {
+          color:  ${leerColor(colores.gris)};
+          display:block;
+          margin-top:20px;
+          letter-spacing:1px;
+          font-size: 20px;
+      }
+      .formulario {
+          display:block;
+          margin:0 auto;
+          width:510px;
+          color:  ${leerColor(colores.rosa)};
+          font-family: Roboto;
+      }
+      form {
+          margin:0 auto;
+          width:400px;
+      }
+      
+      input, textarea {
+          width: 400px;
+          height: 24px;
+          background-color: hsl(0,0%,96.1%);
+          padding: 20px;
+          margin-top: 5px;
+          color:  ${leerColor(colores.azul)};
+          font-size: 16px;
+          font-family: Roboto;
+      }
+      
+      textarea {
+          height:250px;
+      }
+      
+      #submit {
+          width: 150px;
+          height: 45px;
+          border:none;
+          margin-top:15px;
+          cursor:pointer;
+          color:  ${leerColor(colores.gris)};
+          background-color:  ${leerColor(colores.celeste)};
+          padding: 5px;
+
+      }
+    
+`;
+
+
 
 
 

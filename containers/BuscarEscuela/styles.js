@@ -211,10 +211,8 @@ export const TitulosCard = styled.div`
 
   h2{
     color: ${leerColor(colores.gris)};
-    text-transform: uppercase;
-    font-weight: 800;
     text-align: center;
-    font-size:30px;
+    font-size:37px;
     
   }
 
@@ -222,7 +220,6 @@ export const TitulosCard = styled.div`
     font-size: 25px;
     color: ${leerColor(colores.gris)};
     text-align: center;
-    font-style: italic;
     margin: 0;
   }
 
@@ -230,6 +227,8 @@ export const TitulosCard = styled.div`
     font-size: 20px;
     color: ${leerColor(colores.celeste)};
     text-align: center;
+    font-family: Roboto;
+    font-weight:bold;
   } 
 
   h5{
@@ -241,6 +240,8 @@ export const TitulosCard = styled.div`
     width: 40%;
     margin: 0 auto;
     margin-bottom: 4%;
+    font-family: Arial;
+    
   } 
   
 `;

@@ -132,7 +132,7 @@ export default class ComunidadPadresContainer extends Component {
                           
                             <CardImgActividades>
                                 <img src="/img/padres/actividades1.jpg" />
-                                <h1>Fútbol padres</h1>
+                                <h1>Fútbol padres y madres</h1>
                             </CardImgActividades>
                                               
                                  <CardImgActividades>

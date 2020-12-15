@@ -36,7 +36,7 @@ function Header() {
             </li>
           ) : (
             <li>
-              <a href="/api/login">Registrarse</a>
+              <a href="/api/login">Registrarse/Ingresar</a>
             </li>
           )}
           {user && !loading && (
