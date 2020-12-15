@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {firebase} from "../../lib";
+//import actualizarEscuelita from "../../pages/api/escuelas/edit";
 const firebaseDB = firebase.database();
-
-/*import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';*/
 import { Header, Footer, Wrapper, Boton } from '../../components';
 import { 
     ContainerTexts, 
@@ -30,11 +28,23 @@ import {
     FormularioContacto,
 } from './styles';
 
+
+
   
 function HomeContainer() {
         const [escuelas, setEscuelas] = useState([]);
         const getData = async () => {
-           
+        //  const data = {
+        //      name:"nombreCambiado",
+        //      barrio:"barrioCambiado",
+        //      telefono:"telefonoCambiado",
+        //      direccion: "direcCambiada",
+        //      imagen: "imgCambiada"
+        //  }
+        //  const id = "MOcJZWQDNfYb9oFbDvY";
+        //  await actualizarEscuelita(data, id);
+         
+
             firebaseDB.ref('escuelas').once('value', (snapshot) => {
                 const escuelasArr = [];
                 snapshot.forEach((childSnapshot) => {
