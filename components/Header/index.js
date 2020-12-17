@@ -15,7 +15,8 @@ function Header() {
       <ContainerHeader>
         <Logo>
           <a>
-            <img src="/img/logo.png" />
+       
+            <img src="/img/logo.png" /> 
           </a>
         </Logo>
 
@@ -23,7 +24,7 @@ function Header() {
           <li>
             <Link href={"/"}>Home</Link>
           </li>
-          {/* <li><Link href={"/torneos"}>Torneos</Link></li>  */}
+         
           <li>
             <Link href={"/comunidad-padres"}>Comunidad de padres</Link>
           </li>
@@ -44,6 +45,11 @@ function Header() {
               <p>{user.nickname}</p>
             </li>
           )}
+          
+
+          <li>
+            <Link href={"/administrador"}>Administrador</Link>
+          </li>
         </ul>
 
         <MobileHeader>

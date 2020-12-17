@@ -27,8 +27,8 @@ export const TextosPadres = styled.div`
   h1{
     position: relative;
     top: 140px;
-    left: 0px;
-    width: 100%;
+    left: 30px;
+    width: 85%;
     color: #fff;
     background-color:  ${leerColor(colores.celeste)};   
     font-size: 60px;
@@ -41,10 +41,21 @@ export const TextosPadres = styled.div`
       margin-bottom: 8%;
       position:relative;
       top: 110px;
-      left: 0px;
+      left: 30px;
       font-weight:700;
       font-size: 24px;
     }
+
+    @media (min-width: ${breakpoints.laptop}) {
+      h1{
+      left: 70px;        
+    }
+
+      h3{
+        left: 75px;
+      }
+    }
+
 
     @media (min-width: ${breakpoints.laptop}) {
       h1{
@@ -68,7 +79,7 @@ export const DescuentoSemana = styled.div`
 
     h1{
       margin-bottom: 5%;
-      width: 45%;
+      width: 100%;
       color: ${leerColor(colores.gris)};
       background-color: ${leerColor(colores.rosa)};
       font-size: 38px;
@@ -77,6 +88,10 @@ export const DescuentoSemana = styled.div`
 
     @media (min-width: ${breakpoints.laptop}) {
       width: 100%;
+
+      h1{
+        width:30%;
+      }
     }
     
 `;
@@ -107,7 +122,7 @@ export const Card = styled.a`
 
 export const CardImg = styled.div`
     height: 250px;
-    width: 250px;
+    width: 100%;
     img{
     width: 100%;
     height: 300px;
@@ -119,7 +134,7 @@ export const CardImg = styled.div`
       width: 150px;
 
       img{
-        width: 200%;
+        width: 175%;
       }
     }
 
@@ -165,16 +180,29 @@ export const SalimosManejando = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-
-    @media (min-width: ${breakpoints.laptopL}) {
-      flex-direction: row;
+    img{
+      display:none;
     }
 
+    @media (min-width: ${breakpoints.laptop}) {
+    
+      img{
+      display:block;
+      
+    }
+  }
+    @media (min-width: ${breakpoints.laptopL}) {
+    
+      flex-direction: row;
+
+    }
+
+   
 `;
 
 export const TextosSecciones = styled.div`
-  margin-bottom: 7%;
-    margin-top: 15%;
+    margin-bottom: 7%;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     width:100%;
@@ -182,7 +210,7 @@ export const TextosSecciones = styled.div`
     h1{    
       
       color: ${leerColor(colores.celeste)};
-      font-size: 30px;
+      font-size: 50px;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
@@ -202,6 +230,7 @@ export const TextosSecciones = styled.div`
       font-size: 20px;
       width: 60%;
       margin: 3px auto;
+      font-family: Arial, Helvetica, sans-serif;
      
     }
 
@@ -232,7 +261,7 @@ export const ImagenesSalimosManejando = styled.div`
 
 
 export const ActividadesPadres = styled.div`
-
+    margin-top: 5%;   
     margin-bottom: 10%;
     width: 100%;
     display: flex;
@@ -253,7 +282,8 @@ export const LasActividades = styled.div`
 	  }
 
     h1{
-        font-size: 18px;
+        
+        font-size: 35px;
         color: ${leerColor(colores.gris)};
         background-color: ${leerColor(colores.rosa)};
         text-transform: uppercase;
@@ -299,6 +329,7 @@ export const CardImgActividades = styled.div`
     @media (min-width: ${breakpoints.notebook}) {
     width: 250%;
   }
+  
 
 `;
 

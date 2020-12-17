@@ -26,10 +26,9 @@ export const TextosTalleres = styled.div`
     h1{
       position:relative;
       top: 140px;
-      left: 0px;
-      left: 235px;
+      left: 80px;
       font-size: 68px;
-      width: 15%;
+      width: 70%;
       color: #fff;
       background-color:  ${leerColor(colores.celeste)};
  
@@ -40,15 +39,29 @@ export const TextosTalleres = styled.div`
 
     h3{
       color:  ${leerColor(colores.gris)};
-      width: 30%;
+      width: 55%;
       margin-bottom: 8%;
       position:relative;
       top: 110px;
       left: 0px;
-      left: 235px;
+      left: 80px;
       font-weight:700;
       font-size: 24px;
     }
+    
+    @media (min-width: ${breakpoints.laptop}) {
+
+    h1{
+      left: 235px;
+      width: 15%;
+    }
+
+    h3{
+      left: 235px;
+      width:30%;
+    }
+
+  }
 `;
 
 
@@ -74,6 +87,21 @@ export const TallerHoyTextos = styled.div`
       font-size: 18px;
       color: ${leerColor(colores.gris)};
     }
+`;
+
+export const VideoResponsive = styled.div`
+    width: 100%;
+
+   iframe{
+      width:100%;
+    }
+   
+    @media (min-width: ${breakpoints.laptop}) {
+      iframe{
+      width:100%;
+    }
+    }
+  
 `;
 
 export const Card = styled.a`
@@ -133,9 +161,8 @@ export const ActividadesTalleres = styled.div`
 export const LasActividades = styled.div`
     margin-top: 5%;
     width: 100%;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-column-gap: 20px;
+    display: flex;
+    flex-direction:column;
 
     img{
         width: 250%!important;
@@ -153,8 +180,6 @@ export const LasActividades = styled.div`
         display:flex;
         padding: 5px;
         width:50%;
-      
-
 	}
 
     h2, h3{
@@ -162,7 +187,27 @@ export const LasActividades = styled.div`
       margin-bottom: 2%;
       width:80%;
       font-size: 18px;
-	}
+  }
+
+  iframe{
+      width:200%;
+    }
+
+  @media (min-width: ${breakpoints.tablet}) {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-column-gap: 85px;
+  }
+  
+  @media (min-width: ${breakpoints.laptopL}) {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 20px;
+
+    iframe{
+      width:250%;
+    }
+  }
 
 `;
 

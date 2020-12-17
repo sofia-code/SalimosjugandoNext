@@ -11,6 +11,7 @@ import {
     TextosTalleres,
     Talleres,
     TalleresFondo,
+    VideoResponsive,
     TallerHoy,
     TallerHoyTextos,
 } from './styles';
@@ -24,6 +25,7 @@ export default class TalleresContainer extends Component {
           playerVars: {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 1,
+            
           }}
 
           const opts2 = {
@@ -50,7 +52,9 @@ export default class TalleresContainer extends Component {
                 <TallerHoyTextos>
                     <h1>Taller de hoy: </h1>
                 </TallerHoyTextos>
+                <VideoResponsive>
                 <YouTube videoId="7aSeafShefI" opts={opts} onReady={this._onReady} />;
+                </VideoResponsive>
             </TallerHoy>
         
                     <ActividadesTalleres>       

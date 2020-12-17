@@ -5,6 +5,7 @@ import { breakpoints, leerColor, colores } from '../../constants';
 export const Filtro = styled.div`
    width:100%;
    margin-top:5%;
+   margin-bottom:5%;
    display:flex;
    background-color: #060621;
     padding: 1%;
@@ -20,8 +21,8 @@ export const Filtro = styled.div`
    
    select {
     margin-left: 3%;
-    width: 15%;
-    font-size: 18px;
+    width: 30%;
+    font-size: 15px;
     color: ${leerColor(colores.celeste)};
     background-color: ${leerColor(colores.azul)};
     border-radius: 70px;
