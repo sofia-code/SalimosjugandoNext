@@ -22,7 +22,7 @@ function Header() {
 
         <ul id="nav">
           <li>
-            <Link href={"/"}>Home</Link>
+            <Link href={"/index"}>Home</Link>
           </li>
          
           <li>
