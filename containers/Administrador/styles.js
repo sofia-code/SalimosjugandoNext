@@ -24,7 +24,7 @@ export const ContenedorAgregar = styled.div`
     color:  ${leerColor(colores.gris)};
    }
 
-   input{
+   input, #agregar{
      width: 13%;
      padding: 1%;
      margin-right: 5px;
