@@ -1,84 +1,155 @@
-import React, { Component } from 'react';
-import Link from 'next/link'
+import React, { useState, useEffect } from "react";
 
-import { Header, Footer, Wrapper, Boton } from '../../components';
-import { 
-    Escuelas,
-    ContenedorAgregar,
-    ContenedorEscuelita
-} from './styles';
-
+import { Header, Footer, Wrapper, Boton } from "../../components";
+import { Escuelas, ContenedorAgregar, ContenedorEscuelita } from "./styles";
+import agregarEscuelita from "../../pages/api/escuelas/add";
+import obtenerEscuelas from "../../pages/api/escuelas/index";
+import eliminarEscuela from "../../pages/api/escuelas/delete";
+import actualizarEscuela from "../../pages/api/escuelas/edit";
 
 function AdministradorContainer() {
-  
-    return (
-    <>      
+  //Objeto vacio para cargar una nueva escuela
+  const [escuela, setEscuela] = useState({
+    imagen: "",
+    name: "",
+    barrio: "",
+    direccion: "",
+    telefono: "",
+  });
 
-        <Wrapper direction="column">
-        
-                    <Escuelas>       
+  //Escuelas cargadas en base de datos
+  const [escuelas, setEscuelas] = useState([]);
 
-                        <h1>Administrador de Escuelas</h1>
+  //Cuando se esta cargando un campo del formulario se ejecuta esta funcion y actualiza el valor para el campo especifico
+  const cambiarCampo = (event) => {
+    //Este metodo lo que hace es evitar que el componente se actualice por culpa de los eventos
+    event.preventDefault();
 
-                            <ContenedorAgregar>
-                                        <h2>Agregar Escuelita</h2>
+    const campo = event.target.name;
+    const value = event.target.value;
 
-                                        <form method="">
-                                        <input type="text" name="foto" placeholder="URL imagen" required="" />
-                                        <input type="text" name="nombre" placeholder="Nombre escuela" required="" />
-                                        <input type="text" name="barrio" placeholder="Barrio" required="" />
-                                        <input type="text" name="direccion" placeholder="Direccion" required="" />
-                                        <input type="text" name="contacto" placeholder="Contacto" required="" />
+    setEscuela({ ...escuela, [campo]: value });
+  };
 
+  //Luego de enviar el formulario a guardar se vacia el formulario
+  const vaciarFormulario = () => {
+    const escuelaVacia = Object.assign(
+      {},
+      ...Object.keys(escuelas).map(([key]) => ({ [key]: "" }))
+    );
 
-                                        <input id="agregar" type="submit" name="submit" value="Agregar" />
-                                       
-                                    </form>
+    setEscuela(escuelaVacia);
+  };
 
-                            </ContenedorAgregar>
-                            
-                            
-                        <ContenedorEscuelita>
+  //Guarda la escuela en base de datos
+  const cargarEscuelita = async (event) => {
+    event.preventDefault();
 
-                            <h2>Escuelas activas</h2>
+    await agregarEscuelita(escuela);
+    vaciarFormulario();
+  };
 
-                            <form method="">
-                                <input type="text" name="foto" placeholder="URL imagen" required="" />
-                                <input type="text" name="nombre" placeholder="Nombre escuela" required="" />
-                                <input type="text" name="barrio" placeholder="Barrio" required="" />
-                                <input type="text" name="direccion" placeholder="Direccion" required="" />
-                                <input type="text" name="contacto" placeholder="Contacto" required="" />
+  const eliminarEscuelita = async (e, id) => {
+    e.preventDefault();
 
+    await eliminarEscuela(id);
 
-                                <input id="modificar" type="submit" name="submit" value="Modificar" />
-                                <input id="eliminar" type="submit" name="submit" value="Eliminar" />
-                            </form>
+    const respuesta = await obtenerEscuelas();
 
-                        </ContenedorEscuelita>
+    setEscuelas(respuesta);
+  };
 
-                        <ContenedorEscuelita>
+  const actualizarEscuelita = async (event, id) => {
+    event.preventDefault();
 
-                            <form method="">
-                                <input type="text" name="foto" placeholder="URL imagen" required="" />
-                                <input type="text" name="nombre" placeholder="Nombre escuela" required="" />
-                                <input type="text" name="barrio" placeholder="Barrio" required="" />
-                                <input type="text" name="direccion" placeholder="Direccion" required="" />
-                                <input type="text" name="contacto" placeholder="Contacto" required="" />
+    await actualizarEscuela(escuela, id);
+  };
 
+  useEffect(() => {
+    //Funcion asincrona que se ejecuta al cargar el componente y se trae todas las escuelas de la base de datos
+    const fn = async () => {
+      const respuesta = await obtenerEscuelas();
 
-                                <input id="modificar" type="submit" name="submit" value="Modificar" />
-                                <input id="eliminar" type="submit" name="submit" value="Eliminar" />
-                            </form>
+      setEscuelas(respuesta);
+    };
 
-                        </ContenedorEscuelita>
-                        
-                     
-                  </Escuelas>  
-                         
-        </Wrapper>
-   
+    fn();
+  }, [escuelas]);
+
+  return (
+    <>
+      <Wrapper direction="column">
+        <Escuelas>
+          <h1>Administrador de Escuelas</h1>
+
+          <ContenedorAgregar>
+            <h2>Agregar Escuelita</h2>
+
+            <form>
+              <input onChange={cambiarCampo} type="text" name="imagen" placeholder="URL imagen" />
+              <input onChange={cambiarCampo} type="text" name="name" placeholder="Nombre escuela" />
+              <input onChange={cambiarCampo} type="text" name="barrio" placeholder="Barrio" />
+              <input onChange={cambiarCampo} type="text" name="direccion" placeholder="Direccion" />
+              <input onChange={cambiarCampo} type="text" name="telefono" placeholder="Contacto" />
+
+              <button onClick={cargarEscuelita} id="agregar">
+                Agregar
+              </button>
+            </form>
+          </ContenedorAgregar>
+
+          {escuelas?.map((escuela) => (
+            <ContenedorEscuelita key={escuela.id}>
+              <form>
+                <input
+                  type="text"
+                  name="imagen"
+                  placeholder="URL imagen"
+                  defaultValue={escuela.imagen}
+                  onChange={cambiarCampo}
+                />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nombre escuela"
+                  defaultValue={escuela.name}
+                  onChange={cambiarCampo}
+                />
+                <input
+                  type="text"
+                  name="barrio"
+                  placeholder="Barrio"
+                  defaultValue={escuela.barrio}
+                  onChange={cambiarCampo}
+                />
+                <input
+                  type="text"
+                  name="direccion"
+                  placeholder="Direccion"
+                  defaultValue={escuela.direccion}
+                  onChange={cambiarCampo}
+                />
+                <input
+                  type="text"
+                  name="telefono"
+                  placeholder="Contacto"
+                  defaultValue={escuela.telefono}
+                  onChange={cambiarCampo}
+                />
+
+                <button id="modificar" onClick={(e) => actualizarEscuelita(e, escuela.id)}>
+                  Modificar
+                </button>
+
+                <button id="eliminar" onClick={(e) => eliminarEscuelita(e, escuela.id)}>
+                  Eliminar
+                </button>
+              </form>
+            </ContenedorEscuelita>
+          ))}
+        </Escuelas>
+      </Wrapper>
     </>
-
-);
+  );
 }
 export default AdministradorContainer;

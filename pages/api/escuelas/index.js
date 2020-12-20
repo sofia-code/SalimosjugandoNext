@@ -1,26 +1,30 @@
-import auth0 from '../../../lib/auth0';
-import { firebase } from '../../../lib';
-const firebaseDB = firebase.database();
+import { firebase } from "../../../lib";
 
-export default async (req, res) => {
+const obtenerEscuelas = async () => {
   try {
-    firebaseDB.ref('escuelas').once('value', (snapshot) => {
-      const escuelasArr = [];
-      snapshot.forEach((childSnapshot) => {
-        escuelasArr.push({
-          id: childSnapshot.key,
-          ...childSnapshot.val()
-        })
-      })
-      escuelasArr.reverse()
-      res.status(200).json(escuelasArr);
-    })
+    const firebaseDB = firebase.database();
 
+    return firebaseDB
+      .ref("escuelas")
+      .once("value")
+      .then((snapshot) => {
+        let escuelasArr = [];
+
+        snapshot.forEach((childSnapshot) => {
+          escuelasArr = [
+            ...escuelasArr,
+            {
+              id: childSnapshot.key,
+              ...childSnapshot.val(),
+            },
+          ];
+        });
+
+        return escuelasArr;
+      });
   } catch (error) {
     console.error(error);
-    res.status(error.status || 500).json({
-      code: error.code,
-      error: error.message
-    });
   }
 };
+
+export default obtenerEscuelas;
