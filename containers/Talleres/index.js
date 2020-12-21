@@ -53,7 +53,7 @@ export default class TalleresContainer extends Component {
                     <h1>Taller de hoy: </h1>
                 </TallerHoyTextos>
                 <VideoResponsive>
-                <YouTube videoId="7aSeafShefI" opts={opts} onReady={this._onReady} />;
+                <YouTube videoId="OrRjLGXEiq4" opts={opts} onReady={this._onReady} />;
                 </VideoResponsive>
             </TallerHoy>
         
@@ -71,35 +71,35 @@ export default class TalleresContainer extends Component {
 
                               <div>
                                  <CardImgActividades>
-                                 <YouTube videoId="7aSeafShefI" opts={opts2} onReady={this._onReady} />;
+                                 <YouTube videoId="qfXD3SBEvVE" opts={opts2} onReady={this._onReady} />;
                                  </CardImgActividades>
                             
                             </div> 
 
                             <div>
                                  <CardImgActividades>
-                                 <YouTube videoId="7aSeafShefI" opts={opts2} onReady={this._onReady} />;
+                                 <YouTube videoId="MwYzNyqWS7Q" opts={opts2} onReady={this._onReady} />;
                                  </CardImgActividades>
                             
                             </div> 
 
                             <div>
                                  <CardImgActividades>
-                                 <YouTube videoId="7aSeafShefI" opts={opts2} onReady={this._onReady} />;
+                                 <YouTube videoId="OrRjLGXEiq4" opts={opts2} onReady={this._onReady} />;
                                  </CardImgActividades>
                             
                             </div> 
 
                             <div>
                                  <CardImgActividades>
-                                 <YouTube videoId="7aSeafShefI" opts={opts2} onReady={this._onReady} />;
+                                 <YouTube videoId="qfXD3SBEvVE" opts={opts2} onReady={this._onReady} />;
                                  </CardImgActividades>
                             
                             </div> 
 
                             <div>
                                  <CardImgActividades>
-                                 <YouTube videoId="7aSeafShefI" opts={opts2} onReady={this._onReady} />;
+                                 <YouTube videoId="MwYzNyqWS7Q" opts={opts2} onReady={this._onReady} />;
                                  </CardImgActividades>
                             
                             </div> 

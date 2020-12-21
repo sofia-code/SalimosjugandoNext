@@ -14,7 +14,7 @@ function Header() {
     <Wrapper>
       <ContainerHeader>
         <Logo>
-          <a>
+          <a href={"/index"}>
        
             <img src="/img/logo.png" /> 
           </a>
@@ -42,14 +42,13 @@ function Header() {
           )}
           {user && !loading && (
             <li>
-              <p>{user.nickname}</p>
+             <a href={"/administrador"}>{user.nickname}</a> 
             </li>
+
           )}
           
 
-          <li>
-            <Link href={"/administrador"}>Administrador</Link>
-          </li>
+          
         </ul>
 
         <MobileHeader>
