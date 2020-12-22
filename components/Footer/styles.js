@@ -5,17 +5,27 @@ import { breakpoints, leerColor, colores } from '../../constants';
 export const FooterContenedor = styled.div`
     margin-bottom: 2%;
     width: 100%;
-
+    
     display:flex;
     flex-direction:row;
-    margin-top: 5%;
+    margin-top: 10%;
     text-align:center;
-    margin: 0 auto;
+  
 
 cursor: pointer;
 img {
   width: 15%;
 }
+
+
+@media (min-width: ${breakpoints.mobileGrande}){
+      margin-top: 3%;
+    }
+
+
+    @media (min-width: ${breakpoints.laptop}){
+      margin-top: 0%;
+    }
 `;
 
 
@@ -25,13 +35,15 @@ export const Derechos = styled.div`
     h5{
       color:  ${leerColor(colores.gris)};
       
-      text-align:center;
+      text-align:left;
       letter-spacing:1.5px;
     }
 
     h3{
       color:  ${leerColor(colores.rosa)};
       font-size: 18px;
+      text-align:left;
+
     }
 
 
@@ -41,16 +53,35 @@ export const Derechos = styled.div`
 export const Redes = styled.div`
  width: 100%;
 
-    img{
-      width: 5%;
+    .ul{
+      -webkit-box-pack: center;
+      place-content: space-around center;
+      display: flex;
+      text-decoration: none;
+      list-style: none;
+      font-size: 11px;
+      margin: 0px auto;
+      font-weight: 600;
+      -webkit-box-align: center;
+      align-items: center;
     }
 
-    .fb{
-      width: 9%!important;
+    .li{
+      padding: 0px 10px;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    transition: all 0.4s ease 0s;
     }
-  
 
-
-
-
+    .li img{
+      font-size: 10px;
+    text-align: center;
+    margin: 0px auto;
+    -webkit-box-pack: center;
+    justify-content: center;
+    transition: all 0.4s ease 0s;
+    width: 50px;
+}
+    
 `;

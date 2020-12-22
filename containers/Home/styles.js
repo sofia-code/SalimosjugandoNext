@@ -81,7 +81,7 @@ export const ContenedorBoton = styled.div`
         text-align:center;
 
 @media (min-width: ${breakpoints.laptop}) {
-        top: 640px;
+        top: 665px;
         left: 0px;
 
 }
@@ -485,6 +485,7 @@ export const FormularioContacto = styled.div`
           height: 45px;
           border:none;
           margin-top:15px;
+          margin-bottom: 7%;
           cursor:pointer;
           color:  ${leerColor(colores.gris)};
           background-color:  ${leerColor(colores.celeste)};
@@ -495,14 +496,20 @@ export const FormularioContacto = styled.div`
 `;
 
 
+export const ValidacionFormulario = styled.div`
+
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    background-color:  ${leerColor(colores.rosa)};
+    color:  ${leerColor(colores.gris)};
+    font-size: 20px;
 
 
-
-
-
-
-
-
+    @media (min-width: ${breakpoints.laptop}){
+      font-size: 28px;
+    }
+`;
 
 
 

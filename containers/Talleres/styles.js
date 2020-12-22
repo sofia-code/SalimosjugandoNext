@@ -53,7 +53,7 @@ export const TextosTalleres = styled.div`
 
     h1{
       left: 235px;
-      width: 15%;
+      width: 25%;
     }
 
     h3{

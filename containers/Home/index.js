@@ -26,10 +26,13 @@ import {
   TextosQuienesSomos,
   ImagenSomosFamilia,
   FormularioContacto,
+  ValidacionFormulario,
 } from "./styles";
 
 function HomeContainer() {
   const [escuelas, setEscuelas] = useState([]);
+  const [contactoMensaje, setContactoMensaje] = useState("");
+
   const getData = async () => {
     //  const data = {
     //      name:"nombreCambiado",
@@ -54,6 +57,26 @@ function HomeContainer() {
       setEscuelas(escuelasArr);
     });
   };
+
+  const submitForm = (ev) => {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+      setContactoMensaje("Se envió tu consulta, te responderemos a la brevedad, ¡gracias!");
+      } else {
+        setContactoMensaje("Ocurrió un error, por favor vuelva a intentarlo");
+      }
+    };
+    xhr.send(data);
+  }
+
   useEffect(() => {
     getData();
   }, []);
@@ -162,7 +185,11 @@ function HomeContainer() {
         <Wrapper>
           <h2>¡Contactanos!</h2>
         </Wrapper>
-        <form method="post">
+        <form  
+          onSubmit={submitForm}
+          action="https://formspree.io/f/moqppjnb"
+          method="POST">
+
           <label for="nombre">Nombre:</label>
           <input
             id="nombre"
@@ -185,7 +212,14 @@ function HomeContainer() {
           <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required=""></textarea>
           <input id="submit" type="submit" name="submit" value="Enviar" />
         </form>
+
+        
+       {contactoMensaje?.length && (<ValidacionFormulario>{contactoMensaje}</ValidacionFormulario>)}
+   
+
       </FormularioContacto>
+      
+   
     </>
   );
 }

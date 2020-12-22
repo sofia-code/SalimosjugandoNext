@@ -9,6 +9,7 @@ import Wrapper from "../Wrapper";
 function Header() {
   const [open, setOpen] = useState(false);
   const { user, loading } = useFetchUser();
+  console.log("user", user);
 
   return (
     <Wrapper>
@@ -40,9 +41,16 @@ function Header() {
               <a href="/api/login">Registrarse/Ingresar</a>
             </li>
           )}
+          {user?.nickname === "admin" && !loading && (
+            <li>
+             <a href={"/administrador"}>Panel de Administración</a> 
+            </li>
+
+          )}
+
           {user && !loading && (
             <li>
-             <a href={"/administrador"}>{user.nickname}</a> 
+             <a>{user.nickname}</a> 
             </li>
 
           )}

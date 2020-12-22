@@ -1,23 +1,33 @@
 import React from 'react';
 import { FooterContenedor,  Derechos, Redes } from './styles';
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+import { Wrapper } from "../../components";
 function Footer (){
     return (
         <FooterContenedor>
+              <Wrapper>
             <Derechos>       
-            <a href="https://www.behance.net/sofihadjilias" target="_blank"><h5>Salimos Jugando ® | Hecho con &#9829; por <h3>Sofita Hadjilias</h3> </h5> </a>
+            <h5>Salimos Jugando ® | Hecho con &#9829; por</h5> <a href="https://www.behance.net/sofihadjilias" target="_blank"><h3>SOFIA HADJILIAS</h3></a>
                 
             </Derechos>
 
             <Redes>
-                <a href="https://www.facebook.com/Salimos-Jugando-106054751396959" target="_blank">
-                        <img class="fb" src="/img/facebook.png" /> 
-                    </a>
+                <ul class="ul">
+                    <li class="li">
+                        <a href="https://www.facebook.com/Salimos-Jugando-106054751396959" target="_blank">
+                            <img class="fb" src="/img/fb.png" /> 
+                        </a>
+                    </li>
 
-                    <a href="https://www.youtube.com/channel/UCX3zOqxkdtMw0aswNffDXfw" target="_blank">
-                        <img src="/img/youtube.svg" /> 
-                    </a>
+                    <li class="li">
+                        <a href="https://www.youtube.com/channel/UCX3zOqxkdtMw0aswNffDXfw" target="_blank">
+                            <img src="/img/youtube.png" /> 
+                        </a>
+                    </li>
+
+                </ul>
             </Redes>
+
+            </Wrapper>
         </FooterContenedor>
 
     );
