@@ -25,10 +25,11 @@ export const ContenedorAgregar = styled.div`
    }
 
    input, #agregar{
-     width: 13%;
-     padding: 1%;
-     margin-right: 5px;
+    width: 100%;
+    padding: 4%;
+     
    }
+   
 
    #agregar{
     background-color:  ${leerColor(colores.rosa)};
@@ -37,9 +38,19 @@ export const ContenedorAgregar = styled.div`
     cursor:pointer;
     font-size: 18px;
     font-weight: bolder;
-    margin-left: 4%;
+    
    }
 
+   @media (min-width: ${breakpoints.tablet}) {
+    input, #agregar{
+     width: 15%;
+     margin-right: 3px;
+     padding:2%;
+     #agregar{
+      margin-left: 6%;
+     } 
+   }
+   }
   
 `;
 
@@ -57,8 +68,8 @@ export const ContenedorEscuelita = styled.div`
 
 
    input{
-     width: 13%;
-     padding: 1%;
+    width: 100%;
+    padding: 4%;
      margin-right: 5px;
    }
 
@@ -67,9 +78,9 @@ export const ContenedorEscuelita = styled.div`
     color:  ${leerColor(colores.gris)};
     border:none;
     cursor:pointer;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bolder;
-    margin-left: 4%;
+    margin-left: 2%;
    }
 
    #eliminar{
@@ -77,10 +88,30 @@ export const ContenedorEscuelita = styled.div`
     color:  ${leerColor(colores.gris)};
     border:none;
     cursor:pointer;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bolder;
+    margin-left: 15%;
+   }
+
+   @media (min-width: ${breakpoints.tablet}) {
+    input{
+     width: 13%;
+     margin-right: 5px;
+     padding: 2%;
+   }
+
+
+   #modificar{
+    font-size: 18px;
     margin-left: 2%;
    }
+
+   #eliminar{
+    font-size: 18px;
+    margin-left: 2%;
+   }
+   }
+  
 
 
 `;

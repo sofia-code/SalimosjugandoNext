@@ -182,7 +182,7 @@ export const Card = styled.a`
 @media (min-width: ${breakpoints.laptop}) {
   background-color:#060621;
   border-radius: 70px;
-  cursor: pointer;
+  
   transition: transform .4s ease-out;
 }  &:hover{
     transform: scale(1.1);
